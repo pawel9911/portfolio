@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { GiSuperMushroom } from "react-icons/gi";
-import { Nav } from "../Nav";
+import { Navigation } from "../Navigation";
 import { paths } from "../../router/paths";
 
 const Header = () => {
@@ -18,7 +18,7 @@ const Header = () => {
         </Link>
 
         <div className="hidden xl:flex">
-          <Nav />
+          <Navigation />
         </div>
 
         <div className="xl:hidden">mobile nav</div>

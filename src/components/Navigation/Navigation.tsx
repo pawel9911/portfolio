@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useAccessibleNavigationPaths } from "../../router/utils";
 
-const Nav = () => {
+const Navigation = () => {
   const accessiblePaths = useAccessibleNavigationPaths();
   const location = useLocation();
 
@@ -26,4 +26,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navigation;
