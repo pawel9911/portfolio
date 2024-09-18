@@ -6,6 +6,12 @@ export default {
       fontFamily: {
         primary: ["Inconsolata", "monospace"],
       },
+      backgroundColor: {
+        primary: "#121828",
+      },
+      textColor: {
+        primary: "#fff",
+      },
     },
   },
   plugins: [],
