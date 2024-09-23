@@ -1,5 +1,11 @@
+import { PageTransition } from "../../components";
+
 const ContactSection = () => {
-  return <div>ContactSection</div>;
+  return (
+    <PageTransition>
+      <div>ContactSection</div>
+    </PageTransition>
+  );
 };
 
 export default ContactSection;

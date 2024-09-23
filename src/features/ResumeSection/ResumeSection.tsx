@@ -1,5 +1,11 @@
+import { PageTransition } from "../../components";
+
 const ResumeSection = () => {
-  return <div>ResumeSection</div>;
+  return (
+    <PageTransition>
+      <div>ResumeSection</div>
+    </PageTransition>
+  );
 };
 
 export default ResumeSection;

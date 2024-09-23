@@ -1,5 +1,11 @@
+import { PageTransition } from "../../components";
+
 const HomeSection = () => {
-  return <div>HomeSection</div>;
+  return (
+    <PageTransition>
+      <div>HomeSection</div>
+    </PageTransition>
+  );
 };
 
 export default HomeSection;
