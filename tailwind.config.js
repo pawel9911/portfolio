@@ -6,11 +6,11 @@ export default {
       fontFamily: {
         primary: ["Inconsolata", "monospace"],
       },
-      backgroundColor: {
-        primary: "#121828",
-      },
       textColor: {
         primary: "#fff",
+      },
+      colors: {
+        primary: "rgb(18 24 40 / <alpha-value>)",
       },
     },
   },
