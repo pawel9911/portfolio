@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="h-32 lg:h-40 flex items-center">
       <div className="container mx-auto flex items-center justify-between">
-        <Link to={paths.home} className="z-10">
+        <Link to={paths.home}>
           <p className="text-6xl font-semibold relative">
             Paweł
             <span className="text-red-600">&nbsp;G</span>
