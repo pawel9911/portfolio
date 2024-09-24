@@ -17,7 +17,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
             duration: 0.6,
             ease: "easeInOut",
           }}
-          className="h-[50vh] w-screen fixed bg-red-500 z-40 top-0"
+          className="h-[51vh] w-screen fixed bg-red-500 z-40 top-0"
         />
         <motion.div
           initial={{ opacity: 1 }}
@@ -39,7 +39,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
             duration: 0.6,
             ease: "easeInOut",
           }}
-          className="h-[50vh] w-screen fixed bg-red-500 z-40 bottom-0"
+          className="h-[51vh] w-screen fixed bg-red-500 z-40 bottom-0"
         />
       </AnimatePresence>
     </>
