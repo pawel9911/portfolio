@@ -6,6 +6,6 @@
   body {
     @apply font-primary;
     @apply bg-primary;
-    @apply text-primary;
+    @apply text-white;
   }
 }
