@@ -21,7 +21,7 @@ const PageTransition = ({ children }: PageTransitionProps) => {
         />
         <motion.div
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0 }}
+          animate={{ opacity: 0, visibility: "hidden" }}
           transition={{
             delay: 0.5,
             duration: 0.4,
