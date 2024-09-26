@@ -7,17 +7,17 @@ import { Link, useLocation } from "react-router-dom";
 import { useAccessibleNavigationPaths } from "../../router/utils";
 
 const navVariants = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 50% -18px)`,
+  open: {
+    clipPath: `circle(120vh at 50% -1vh)`,
     transition: {
       type: "spring",
       stiffness: 20,
       restDelta: 2,
       when: "beforeChildren",
     },
-  }),
+  },
   closed: {
-    clipPath: "circle(18px at 50% -18px)",
+    clipPath: "circle(1vh at 50% -1vh)",
     transition: {
       delay: 0.3,
       type: "spring",
