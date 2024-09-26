@@ -13,29 +13,31 @@ const navVariants = {
       type: "spring",
       stiffness: 20,
       restDelta: 2,
+      when: "beforeChildren",
     },
   }),
   closed: {
     clipPath: "circle(18px at 50% -18px)",
     transition: {
-      delay: 0.5,
+      delay: 0.3,
       type: "spring",
       stiffness: 400,
       damping: 40,
+      when: "afterChildren",
     },
   },
 };
 
 const ulVariants = {
   open: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+    transition: { staggerChildren: 0.1 },
   },
   closed: {
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
 
-const liVariants = {
+const liVariants = (revert = true) => ({
   open: {
     y: 0,
     opacity: 1,
@@ -44,13 +46,13 @@ const liVariants = {
     },
   },
   closed: {
-    y: -50,
+    y: revert ? -50 : 50,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
     },
   },
-};
+});
 
 const MobileNav = () => {
   const [statusNav, toggleStatusNav] = useCycle(false, true);
@@ -82,7 +84,7 @@ const MobileNav = () => {
                 <motion.li
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  variants={liVariants}
+                  variants={liVariants()}
                   key={path}
                   className={`${
                     location.pathname === path && "text-red-600"
@@ -95,13 +97,27 @@ const MobileNav = () => {
               ) : null
             )}
           </motion.ul>
-          <div className="flex justify-center gap-5">
-            <Link to="https://github.com/pawel9911">
-              <ImGithub className="text-4xl" />
-            </Link>
-            <Link to="https://www.linkedin.com/in/pawel-grzybek/">
-              <FaLinkedin className="text-4xl" />
-            </Link>
+          <div>
+            <ul className="flex justify-center gap-5">
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                variants={liVariants(false)}
+              >
+                <Link to="https://github.com/pawel9911">
+                  <ImGithub className="text-3xl sm:text-5xl" />
+                </Link>
+              </motion.li>
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                variants={liVariants(false)}
+              >
+                <Link to="https://www.linkedin.com/in/pawel-grzybek/">
+                  <FaLinkedin className="text-3xl sm:text-5xl" />
+                </Link>
+              </motion.li>
+            </ul>
           </div>
         </div>
       </motion.div>
