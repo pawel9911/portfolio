@@ -6,11 +6,14 @@ export default {
       fontFamily: {
         primary: ["Inconsolata", "monospace"],
       },
-      backgroundColor: {
-        primary: "#121828",
+      colors: {
+        primary: "rgb(18 24 40 / <alpha-value>)",
       },
-      textColor: {
-        primary: "#fff",
+      backgroundImage: {
+        nav: "linear-gradient(0deg, rgba(220,38,38,1) 0%, rgba(18,24,40,1) 100%)",
+      },
+      container: {
+        padding: "15px",
       },
     },
   },

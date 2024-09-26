@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
 import { GiSuperMushroom } from "react-icons/gi";
-import { Navigation } from "../Navigation";
+import { Link } from "react-router-dom";
 import { paths } from "../../router/paths";
+import { MobileNav } from "../MobileNav";
+import { Navigation } from "../Navigation";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 ">
+    <header className="h-32 lg:h-40 flex items-center">
       <div className="container mx-auto flex items-center justify-between">
         <Link to={paths.home}>
           <p className="text-6xl font-semibold relative">
@@ -17,11 +18,13 @@ const Header = () => {
           </p>
         </Link>
 
-        <div className="hidden xl:flex">
+        <div className="hidden lg:flex">
           <Navigation />
         </div>
 
-        <div className="xl:hidden">mobile nav</div>
+        <div className="lg:hidden">
+          <MobileNav />
+        </div>
       </div>
     </header>
   );
