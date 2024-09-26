@@ -26,6 +26,32 @@ const navVariants = {
   },
 };
 
+const ulVariants = {
+  open: {
+    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+
+const liVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: -50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
 const MobileNav = () => {
   const [statusNav, toggleStatusNav] = useCycle(false, true);
   const accessiblePaths = useAccessibleNavigationPaths();
@@ -50,22 +76,25 @@ const MobileNav = () => {
         className="fixed inset-0 bg-nav pt-32 p-6"
       >
         <div className="container mx-auto h-full grid grid-rows-[1fr_auto] gap-7">
-          <ul className="flex flex-col gap-7 pt-8">
+          <motion.ul variants={ulVariants} className="flex flex-col gap-7 pt-8">
             {accessiblePaths.map(({ isVisibleOnNavigation, name, path }) =>
               isVisibleOnNavigation ? (
-                <li
+                <motion.li
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  variants={liVariants}
                   key={path}
                   className={`${
                     location.pathname === path && "text-red-600"
-                  } text-center font-bold text-3xl hover:text-red-600 transition-all`}
+                  } text-center font-bold hover:text-red-600 transition-all bg-primary rounded-3xl mx-auto w-full py-2.5 sm:py-3 sm:text-2xl max-w-sm sm:max-w-lg`}
                 >
                   <Link className="block" to={path}>
                     {name}
                   </Link>
-                </li>
+                </motion.li>
               ) : null
             )}
-          </ul>
+          </motion.ul>
           <div className="flex justify-center gap-5">
             <Link to="https://github.com/pawel9911">
               <ImGithub className="text-4xl" />
