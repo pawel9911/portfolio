@@ -77,7 +77,7 @@ const MobileNav = () => {
         variants={navVariants}
         className="fixed inset-0 bg-nav pt-32 p-6"
       >
-        <div className="container mx-auto h-full grid grid-rows-[1fr_auto] gap-7">
+        <div className="container h-full grid grid-rows-[1fr_auto] gap-7">
           <motion.ul variants={ulVariants} className="flex flex-col gap-7 pt-8">
             {accessiblePaths.map(({ isVisibleOnNavigation, name, path }) =>
               isVisibleOnNavigation ? (

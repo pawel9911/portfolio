@@ -14,6 +14,7 @@ export default {
       },
       container: {
         padding: "15px",
+        center: true,
       },
     },
   },
