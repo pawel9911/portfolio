@@ -1,10 +1,9 @@
 import { motion, useCycle } from "framer-motion";
-import { FaLinkedin } from "react-icons/fa";
-import { ImGithub } from "react-icons/im";
 import { IoMdClose } from "react-icons/io";
 import { TbMenu2 } from "react-icons/tb";
 import { Link, useLocation } from "react-router-dom";
 import { useAccessibleNavigationPaths } from "../../router/utils";
+import { Socials } from "../Socials";
 
 const navVariants = {
   open: {
@@ -37,7 +36,7 @@ const ulVariants = {
   },
 };
 
-const liVariants = (revert = true) => ({
+const liVariants = {
   open: {
     y: 0,
     opacity: 1,
@@ -46,13 +45,13 @@ const liVariants = (revert = true) => ({
     },
   },
   closed: {
-    y: revert ? -50 : 50,
+    y: -50,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 },
     },
   },
-});
+};
 
 const MobileNav = () => {
   const [statusNav, toggleStatusNav] = useCycle(false, true);
@@ -84,7 +83,7 @@ const MobileNav = () => {
                 <motion.li
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  variants={liVariants()}
+                  variants={liVariants}
                   key={path}
                   className={`${
                     location.pathname === path && "text-red-600"
@@ -98,26 +97,7 @@ const MobileNav = () => {
             )}
           </motion.ul>
           <div>
-            <ul className="flex justify-center gap-5">
-              <motion.li
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                variants={liVariants(false)}
-              >
-                <Link to="https://github.com/pawel9911">
-                  <ImGithub className="text-3xl sm:text-5xl" />
-                </Link>
-              </motion.li>
-              <motion.li
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                variants={liVariants(false)}
-              >
-                <Link to="https://www.linkedin.com/in/pawel-grzybek/">
-                  <FaLinkedin className="text-3xl sm:text-5xl" />
-                </Link>
-              </motion.li>
-            </ul>
+            <Socials />
           </div>
         </div>
       </motion.div>
