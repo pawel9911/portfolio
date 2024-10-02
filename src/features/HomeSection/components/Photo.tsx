@@ -8,7 +8,7 @@ const Photo = () => {
         initial={{ opacity: 1, scale: 1 }}
         animate={{ opacity: 0, scale: 1.5, visibility: "hidden" }}
         transition={{
-          delay: 2,
+          delay: 3,
           duration: 0.8,
           when: "beforeChildren",
         }}
@@ -20,7 +20,7 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          delay: 2,
+          delay: 3,
           duration: 0.8,
           when: "beforeChildren",
         }}
