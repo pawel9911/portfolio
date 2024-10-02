@@ -22,6 +22,11 @@ export default {
           xl: "1280px",
         },
       },
+      size: {
+        81: "20.25rem",
+        112: "32rem",
+        113: "32.25rem",
+      },
     },
   },
   plugins: [],
