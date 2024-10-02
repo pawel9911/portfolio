@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { PageTransition } from "../../components";
 import { Socials } from "../../components/Socials";
+import { Photo } from "./components";
 
 const HomeSection = () => {
   return (
@@ -29,24 +29,7 @@ const HomeSection = () => {
               </div>
             </div>
             <div className="order-1 lg:order-none mb-8 lg:mb-0">
-              <div className="w-full h-full relative mix-blend-lighten">
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    delay: 2,
-                    duration: 0.4,
-                    when: "beforeChildren",
-                  }}
-                  className="size-80 lg:size-112"
-                >
-                  <img
-                    src="public/assets/me.png"
-                    alt="me"
-                    className="object-contain rounded-full"
-                  />
-                </motion.div>
-              </div>
+              <Photo />
             </div>
           </div>
         </div>
