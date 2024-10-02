@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { HtmlHTMLAttributes } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { ImGithub } from "react-icons/im";
 import { IoLogoMedium } from "react-icons/io5";
@@ -36,19 +37,26 @@ const variants = {
   },
 };
 
-const Socials = () => {
+interface SocialsProps {
+  listStyles?: HtmlHTMLAttributes<HTMLUListElement>["className"];
+  listElementStyles?: HtmlHTMLAttributes<HTMLLIElement>["className"];
+}
+
+const Socials = ({
+  listStyles = "flex justify-center gap-5",
+  listElementStyles = "text-3xl sm:text-5xl",
+}: SocialsProps) => {
   return (
-    <ul className="flex justify-center gap-5">
+    <ul className={listStyles}>
       {socials.map((e) => (
         <motion.li
           key={e.path}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           variants={variants}
+          className={listElementStyles}
         >
-          <Link to={e.path} className="text-3xl sm:text-5xl">
-            {e.icon}
-          </Link>
+          <Link to={e.path}>{e.icon}</Link>
         </motion.li>
       ))}
     </ul>
