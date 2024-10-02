@@ -65,8 +65,8 @@ const MobileNav = () => {
         animate={statusNav ? { transform: "rotate(180deg)" } : {}}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="p-2 w-10 h-10 inline-flex items-center justify-center rounded-full 
-        text-red-600 hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-300 relative z-10"
+        className="p-2 size-10  inline-flex items-center justify-center rounded-full 
+        text-red-600 hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-300 relative z-20"
       >
         <span className="sr-only">Open mobile menu</span>
         {statusNav ? <IoMdClose /> : <TbMenu2 />}
@@ -74,7 +74,7 @@ const MobileNav = () => {
       <motion.div
         animate={statusNav ? "open" : "closed"}
         variants={navVariants}
-        className="fixed inset-0 bg-nav pt-32 p-6"
+        className="fixed z-10 inset-0 bg-nav pt-32 p-6"
       >
         <div className="container h-full grid grid-rows-[1fr_auto] gap-7">
           <motion.ul variants={ulVariants} className="flex flex-col gap-7 pt-8">
