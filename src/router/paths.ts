@@ -1,16 +1,14 @@
 export const paths = {
-  root: "/",
-  dashboard: "/portfolio",
-  home: "/portfolio/home",
-  resume: "/portfolio/resume",
-  projects: "/portfolio/projects",
-  contact: "/portfolio/contact",
+  dashboard: "/",
+  home: "/home",
+  resume: "/resume",
+  projects: "/projects",
+  contact: "/contact",
 } as const;
 
 export type KnownPath = (typeof paths)[keyof typeof paths];
 
 export const pathLabels: Record<KnownPath, string> = {
-  [paths.root]: "",
   [paths.dashboard]: "",
   [paths.home]: "Home",
   [paths.resume]: "Resume",

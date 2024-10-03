@@ -13,10 +13,6 @@ export const RedirectToHomePage = () => {
 
 export const routes: AppRoute[] = [
   {
-    path: paths.root,
-    Component: RedirectToHomePage,
-  },
-  {
     path: paths.dashboard,
     Component: lazy(() => import("../pages/Dashboard")),
     nestedRoutes: [
