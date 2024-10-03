@@ -1,5 +1,6 @@
 import { PageTransition } from "../../components";
 import { Socials } from "../../components/Socials";
+import { TypingText } from "../../components/TypingText";
 import { Photo } from "./components";
 
 const HomeSection = () => {
@@ -9,7 +10,9 @@ const HomeSection = () => {
         <div className="container h-full">
           <div className="flex flex-col lg:flex-row items-center justify-center lg:pt-8 lg:pb-24">
             <div className="grow mb-8 lg:mb-0 order-2 lg:order-none text-center lg:text-left">
-              <span className="text-xl">React Frontend Developer</span>
+              <TypingText
+                texts={["React Frontend Developer", "Frontend Developer"]}
+              />
               <h1 className="h1 mb-6">
                 Hello I'm <br />
                 <span className="text-red-500">Paweł Grzybek</span>
