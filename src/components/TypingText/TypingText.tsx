@@ -18,6 +18,7 @@ const TypingText = ({ texts }: TypingTextProps) => {
     const animation = animate(count, texts[index].length, {
       type: "tween",
       duration: 1,
+      delay: 3,
       ease: "easeIn",
       repeat: Infinity,
       repeatType: "reverse",
