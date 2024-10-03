@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { type KnownPath, pathLabels, paths } from "../paths";
 
-const pathsNotVisibleOnNavigation: KnownPath[] = [paths.root, paths.dashboard];
+const pathsNotVisibleOnNavigation: KnownPath[] = [paths.dashboard];
 
 export const useAccessibleNavigationPaths = () => {
   return useMemo(() => {
