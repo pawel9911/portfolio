@@ -7,7 +7,7 @@ import { Navigation } from "../Navigation";
 const Header = () => {
   return (
     <header className="h-32 lg:h-40 flex items-center">
-      <div className="container mx-auto flex items-center justify-between">
+      <div className="container flex items-center justify-between">
         <Link to={paths.home}>
           <p className="text-6xl font-semibold relative">
             Paweł
