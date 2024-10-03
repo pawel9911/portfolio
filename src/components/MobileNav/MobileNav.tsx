@@ -1,4 +1,4 @@
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle, Variant } from "framer-motion";
 import { IoMdClose } from "react-icons/io";
 import { TbMenu2 } from "react-icons/tb";
 import { Link, useLocation } from "react-router-dom";
@@ -14,6 +14,7 @@ const navVariants = {
       restDelta: 2,
       when: "beforeChildren",
     },
+    willChange: "clip-path",
   },
   closed: {
     clipPath: "circle(1vh at 50% -1vh)",
@@ -24,6 +25,7 @@ const navVariants = {
       damping: 40,
       when: "afterChildren",
     },
+    willChange: "clip-path",
   },
 };
 
@@ -36,20 +38,22 @@ const ulVariants = {
   },
 };
 
-const liVariants = {
+const liVariants: Record<string, Variant> = {
   open: {
     y: 0,
-    opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: -100 },
     },
+    visibility: "visible",
+    willChange: "transform",
   },
   closed: {
-    y: -50,
-    opacity: 0,
+    y: "-100%",
     transition: {
       y: { stiffness: 1000 },
     },
+    visibility: "hidden",
+    willChange: "transform",
   },
 };
 
