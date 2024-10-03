@@ -27,7 +27,7 @@ const Photo = () => {
         className="size-80 lg:size-112 absolute"
       >
         <img
-          src="public/assets/me.png"
+          src="assets/me.png"
           alt="me"
           className="object-contain rounded-full"
         />
