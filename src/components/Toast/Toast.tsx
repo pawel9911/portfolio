@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
-  visible: {
+  visible: (delay: number) => ({
     pathLength: 1,
     opacity: 1,
     transition: {
-      pathLength: { type: "spring", duration: 1.5, bounce: 0 },
-      opacity: { duration: 0.01 },
+      pathLength: { delay, type: "spring", duration: 1.5, bounce: 0 },
+      opacity: { delay, duration: 0.01 },
     },
-  },
+  }),
 };
 
 interface ToastProps {
@@ -39,6 +39,8 @@ const Toast = ({ isSuccess, isError, isPending }: ToastProps) => {
             stroke={color}
             variants={draw}
             className="fill-transparent"
+            animate={{ stroke: color }}
+            transition={{ delay: 1.5 }}
           />
           {isSuccess && (
             <motion.path
@@ -59,6 +61,7 @@ const Toast = ({ isSuccess, isError, isPending }: ToastProps) => {
                 d="M60,60 L120,120"
                 strokeDasharray="0 1"
                 variants={draw}
+                custom={1.5}
               />
               <motion.path
                 fill="none"
@@ -67,6 +70,7 @@ const Toast = ({ isSuccess, isError, isPending }: ToastProps) => {
                 d="M60,120 L120,60"
                 strokeDasharray="0 1"
                 variants={draw}
+                custom={1.5}
               />
             </>
           )}
