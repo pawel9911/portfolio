@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { PageTransition } from "../../components";
 import { Button } from "../../components/Button";
@@ -80,13 +80,15 @@ const ContactSection = () => {
             onSubmit={onSubmit}
             className="relative bg-nav flex flex-col gap-5 w-full border rounded-xl p-10 px-8 sm:px-10 md:p-12 lg:p-14 lg:py-16 xl:py-20 max-w-xl lg:max-w-2xl xl:max-w-3xl"
           >
-            {isPending && (
-              <Toast
-                isError={isError}
-                isSuccess={isSuccess}
-                onAnimationComplete={onAnimationComplete}
-              />
-            )}
+            <AnimatePresence>
+              {isPending && (
+                <Toast
+                  isError={isError}
+                  isSuccess={isSuccess}
+                  onAnimationComplete={onAnimationComplete}
+                />
+              )}
+            </AnimatePresence>
             <motion.h2
               initial={{ y: -50 }}
               animate={{ y: 0 }}

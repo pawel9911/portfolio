@@ -26,6 +26,7 @@ const Toast = ({ isSuccess, isError, onAnimationComplete }: ToastProps) => {
     <motion.div
       initial="hidden"
       animate="visible"
+      exit={{ opacity: 0, transition: { duration: 1 } }}
       variants={draw}
       className="z-40 bg-white/30 rounded-xl w-full h-full flex justify-center items-center absolute top-0 left-0"
     >
