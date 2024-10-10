@@ -20,14 +20,11 @@ const TypingText = ({ texts }: TypingTextProps) => {
       duration: 1,
       delay: 3,
       ease: "easeIn",
-      repeat: Infinity,
+      repeat: 1,
       repeatType: "reverse",
       repeatDelay: 1,
-      onUpdate: (latest) => {
-        if (latest === 0) {
-          index === texts.length - 1 ? setIndex(0) : setIndex((p) => p + 1);
-        }
-      },
+      onComplete: () =>
+        index === texts.length - 1 ? setIndex(0) : setIndex((p) => p + 1),
     });
 
     return () => animation.stop();
