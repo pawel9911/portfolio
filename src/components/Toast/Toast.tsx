@@ -1,4 +1,4 @@
-import { motion, Variants } from "framer-motion";
+import { motion, useMotionValue, useTransform, Variants } from "framer-motion";
 
 const draw: Variants = {
   hidden: { pathLength: 0, opacity: 0, visibility: "hidden" },
@@ -20,7 +20,8 @@ interface ToastProps {
 }
 
 const Toast = ({ isSuccess, isError, onAnimationComplete }: ToastProps) => {
-  const color = isSuccess ? "#00cc88" : isError ? "#ff0055" : "#fff";
+  const x = useMotionValue(0);
+  const color = useTransform(x, [-1, 0, 1], ["#00cc88", "#fff", "#ff0055"]);
 
   return (
     <motion.div
@@ -39,8 +40,6 @@ const Toast = ({ isSuccess, isError, onAnimationComplete }: ToastProps) => {
           stroke={color}
           variants={draw}
           className="fill-transparent"
-          animate={{ stroke: color }}
-          transition={{ delay: 1.5 }}
         />
         {isSuccess && (
           <motion.path
@@ -50,6 +49,7 @@ const Toast = ({ isSuccess, isError, onAnimationComplete }: ToastProps) => {
             d="M60,90 L80,110 L120,70"
             strokeDasharray="0 1"
             variants={draw}
+            onAnimationStart={() => x.set(-1)}
             onAnimationComplete={onAnimationComplete}
           />
         )}
@@ -72,6 +72,7 @@ const Toast = ({ isSuccess, isError, onAnimationComplete }: ToastProps) => {
               strokeDasharray="0 1"
               variants={draw}
               custom={1.5}
+              onAnimationStart={() => x.set(1)}
               onAnimationComplete={onAnimationComplete}
             />
           </>
