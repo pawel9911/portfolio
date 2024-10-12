@@ -1,13 +1,15 @@
 import emailjs from "@emailjs/browser";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChangeEvent, FormEvent, useState } from "react";
-import { PageTransition } from "../../components";
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
-import { Socials } from "../../components/Socials";
-import { Textarea } from "../../components/Textarea";
-import { TypingText } from "../../components/TypingText";
-import { Toast } from "../../components/Toast";
+import {
+  Button,
+  Input,
+  PageTransition,
+  Socials,
+  Textarea,
+  Toast,
+  TypingText,
+} from "../../components";
 
 const defaultValues = {
   firstName: "",
