@@ -9,10 +9,10 @@
     @apply text-white;
   }
   .h1 {
-    @apply text-5xl xl:text-7xl font-semibold;
+    @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold;
   }
   .h2 {
-    @apply text-4xl xl:text-5xl font-semibold;
+    @apply text-2xl sm:text-3xl xl:text-4xl font-semibold;
   }
   .h3 {
     @apply text-xl xl:text-2xl font-semibold;

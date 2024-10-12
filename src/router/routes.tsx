@@ -1,7 +1,7 @@
 import { lazy } from "react";
 import { paths } from "./paths";
 import { Navigate } from "react-router-dom";
-import { AppRoute } from "../components";
+import { AppRoute } from "@components";
 import { ContactSection } from "../features/ContactSection";
 import { HomeSection } from "../features/HomeSection";
 import { ProjectsSection } from "../features/ProjectsSection";

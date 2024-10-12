@@ -1,6 +1,4 @@
-import { PageTransition } from "../../components";
-import { Socials } from "../../components/Socials";
-import { TypingText } from "../../components/TypingText";
+import { PageTransition, Socials, TypingText } from "@components";
 import { Photo } from "./components";
 
 const HomeSection = () => {

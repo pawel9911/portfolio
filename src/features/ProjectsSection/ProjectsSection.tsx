@@ -1,4 +1,4 @@
-import { PageTransition } from "../../components";
+import { PageTransition } from "@components";
 
 const ProjectsSection = () => {
   return (

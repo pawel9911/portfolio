@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import { ComponentType, LazyExoticComponent, ReactElement } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -19,14 +20,16 @@ export function AppRouter({
   renderRoutes = (v) => v,
 }: AppRouterProps) {
   return (
-    <Router>
-      {renderRoutes(
-        <Routes>
-          {renderRouterRoutes(routes)}
-          <Route path="*" element={<NotFoundRouteComponent />} />
-        </Routes>
-      )}
-    </Router>
+    <AnimatePresence mode="wait">
+      <Router>
+        {renderRoutes(
+          <Routes>
+            {renderRouterRoutes(routes)}
+            <Route path="*" element={<NotFoundRouteComponent />} />
+          </Routes>
+        )}
+      </Router>
+    </AnimatePresence>
   );
 }
 
