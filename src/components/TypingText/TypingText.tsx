@@ -7,6 +7,7 @@ interface TypingTextProps {
 
 const TypingText = ({ texts }: TypingTextProps) => {
   const [index, setIndex] = useState(0);
+  const [delay, setDelay] = useState(3);
 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -18,13 +19,15 @@ const TypingText = ({ texts }: TypingTextProps) => {
     const animation = animate(count, texts[index].length, {
       type: "tween",
       duration: 1,
-      delay: 3,
+      delay,
       ease: "easeIn",
-      repeat: 1,
+      repeat: texts.length === 1 ? Infinity : 1,
       repeatType: "reverse",
       repeatDelay: 1,
-      onComplete: () =>
-        index === texts.length - 1 ? setIndex(0) : setIndex((p) => p + 1),
+      onComplete: () => {
+        index === texts.length - 1 ? setIndex(0) : setIndex((p) => p + 1);
+        setDelay(0);
+      },
     });
 
     return () => animation.stop();
