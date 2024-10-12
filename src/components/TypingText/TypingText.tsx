@@ -1,8 +1,9 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import type { NonEmptyArray } from "@/types";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface TypingTextProps {
-  texts: string[];
+  texts: NonEmptyArray<string>;
 }
 
 const TypingText = ({ texts }: TypingTextProps) => {
