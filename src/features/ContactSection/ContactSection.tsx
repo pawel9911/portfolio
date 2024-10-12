@@ -9,7 +9,7 @@ import {
   Textarea,
   Toast,
   TypingText,
-} from "../../components";
+} from "@components";
 
 const defaultValues = {
   firstName: "",

@@ -1,4 +1,4 @@
-import type { NonEmptyArray } from "@/types";
+import type { NonEmptyArray } from "@types";
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
