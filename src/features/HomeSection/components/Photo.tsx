@@ -6,7 +6,7 @@ const Photo = () => {
     <div className="w-full h-full relative mix-blend-lighten">
       <motion.div
         initial={{ opacity: 1, scale: 1 }}
-        animate={{ opacity: 0, scale: 1.5, visibility: "hidden" }}
+        animate={{ opacity: 0, scale: 1.3, visibility: "hidden" }}
         transition={{
           delay: 3,
           duration: 0.8,
