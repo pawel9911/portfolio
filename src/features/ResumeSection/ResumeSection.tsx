@@ -10,7 +10,7 @@ const ResumeSection = () => {
     <PageTransition>
       <div className="container text-9xl">
         <section id="stack" className="mt-8 mb-16">
-          <h2 className="h1 text-center mb-10">Stack</h2>
+          <h2 className="title">Stack</h2>
           <ul className={`grid ${cols} ${gaps}`}>
             {stack.map((e) => (
               <li
