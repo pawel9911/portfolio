@@ -27,6 +27,12 @@ export default {
         112: "32rem",
         113: "32.25rem",
       },
+      maxWidth: {
+        item: 330,
+      },
+      boxShadow: {
+        item: "-1px -1px 10px 5px rgba(161, 34, 39, 1)",
+      },
     },
   },
   plugins: [],
