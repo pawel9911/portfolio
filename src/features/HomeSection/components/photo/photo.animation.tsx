@@ -47,6 +47,7 @@ export const PhotoAnimation = () => {
 
         return (
           <motion.div
+            key={i}
             initial={{
               opacity: 0.5,
               scale: 0.7,
