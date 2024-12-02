@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { GiSuperMushroom } from "react-icons/gi";
 
 const animationClassNames = [
-  "top-[-2%] left-1/2 -translate-x-1/2",
+  "top-[-2%] left-1/2",
 
   "top-[5%] left-[25%]",
   "top-[5%] right-[25%]",
@@ -41,10 +41,25 @@ export const PhotoAnimation = () => {
         when: "beforeChildren",
       }}
     >
-      {animationClassNames.map((className) => (
-        <div className={`absolute -z-10 ${className}`}>
+      {animationClassNames.map((className, i) => (
+        <motion.div
+          initial={{
+            opacity: 1,
+            scale: 0.8,
+            translateX: i === 0 ? "-50%" : 0,
+          }}
+          animate={{ opacity: 0, scale: 1, translateY: -40 }}
+          transition={{
+            type: "tween",
+            duration: 2,
+            ease: "easeIn",
+            repeat: Infinity,
+            repeatDelay: 1,
+          }}
+          className={`absolute -z-10 ${className}`}
+        >
           <GiSuperMushroom className="text-6xl" />
-        </div>
+        </motion.div>
       ))}
     </motion.div>
   );
