@@ -33,6 +33,9 @@ export default {
       boxShadow: {
         item: "-1px -1px 10px 5px rgba(161, 34, 39, 1)",
       },
+      screens: {
+        xs: "475px",
+      },
     },
   },
   plugins: [],
