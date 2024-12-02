@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { GiSuperMushroom } from "react-icons/gi";
 import { PhotoAnimation } from "./photo.animation";
+import { useRef } from "react";
 
 const Photo = () => {
+  const constraintsRef = useRef(null);
+
   return (
     <div className="w-full h-full relative mix-blend-lighten">
       <motion.div
@@ -26,11 +29,16 @@ const Photo = () => {
           when: "beforeChildren",
         }}
         className="size-80 lg:size-112"
+        ref={constraintsRef}
       >
-        <img
+        <motion.img
           src="assets/me.png"
           alt="me"
           className="object-contain rounded-full w-full"
+          drag
+          dragConstraints={constraintsRef}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
         />
       </motion.div>
       <PhotoAnimation />
