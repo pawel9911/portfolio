@@ -1,4 +1,4 @@
-import { stack } from "../../utils";
+import { stack } from "./constants";
 
 const gaps = "gap-8 lg:gap-7 xl:gap-10";
 const cols = "grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-6";
