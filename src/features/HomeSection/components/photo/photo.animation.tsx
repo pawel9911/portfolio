@@ -35,32 +35,40 @@ export const PhotoAnimation = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        // delay: 3,
         delay: 4,
         duration: 0.8,
         when: "beforeChildren",
       }}
     >
-      {animationClassNames.map((className, i) => (
-        <motion.div
-          initial={{
-            opacity: 1,
-            scale: 0.8,
-            translateX: i === 0 ? "-50%" : 0,
-          }}
-          animate={{ opacity: 0, scale: 1, translateY: -40 }}
-          transition={{
-            type: "tween",
-            duration: 2,
-            ease: "easeIn",
-            repeat: Infinity,
-            repeatDelay: 1,
-          }}
-          className={`absolute -z-10 ${className}`}
-        >
-          <GiSuperMushroom className="text-6xl" />
-        </motion.div>
-      ))}
+      {animationClassNames.map((className, i) => {
+        const randomDelay = Number((Math.random() * 3).toFixed(2));
+
+        return (
+          <motion.div
+            initial={{
+              opacity: 0.5,
+              scale: 0.7,
+              translateX: i === 0 ? "-50%" : 0,
+            }}
+            animate={{
+              opacity: [0.5, 1, 0],
+              scale: [0.7, 1],
+              translateY: [0, -40],
+            }}
+            transition={{
+              type: "tween",
+              duration: 3,
+              ease: "easeInOut",
+              delay: randomDelay,
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
+            className={`absolute -z-10 ${className}`}
+          >
+            <GiSuperMushroom className="text-6xl" />
+          </motion.div>
+        );
+      })}
     </motion.div>
   );
 };
