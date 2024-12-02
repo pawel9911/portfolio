@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 import { AppRoute } from "@components";
 import { ContactSection } from "../features/ContactSection";
 import { HomeSection } from "../features/HomeSection";
-import { ProjectsSection } from "../features/ProjectsSection";
 import { ResumeSection } from "../features/ResumeSection";
 
 export const RedirectToHomePage = () => {
@@ -23,10 +22,6 @@ export const routes: AppRoute[] = [
       {
         path: paths.resume,
         Component: ResumeSection,
-      },
-      {
-        path: paths.projects,
-        Component: ProjectsSection,
       },
       {
         path: paths.contact,
