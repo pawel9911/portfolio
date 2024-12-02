@@ -8,6 +8,7 @@ export default {
       },
       colors: {
         primary: "rgb(18 24 40 / <alpha-value>)",
+        secondary: "rgb(161 34 39/ <alpha-value>)", // red
       },
       backgroundImage: {
         nav: "linear-gradient(0deg, rgba(161,34,39,1) 0%, rgba(115,31,39,1) 25%, rgba(80,28,39,1) 75%, rgba(18,24,40,1) 100%)",
@@ -27,11 +28,8 @@ export default {
         112: "32rem",
         113: "32.25rem",
       },
-      maxWidth: {
-        item: 330,
-      },
       boxShadow: {
-        item: "-1px -1px 10px 5px rgba(161, 34, 39, 1)",
+        item: "-1px -1px 10px 5px rgba(161, 34, 39, 1)", // colors.secondary
       },
       screens: {
         xs: "475px",
