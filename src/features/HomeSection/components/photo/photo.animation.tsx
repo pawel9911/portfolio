@@ -3,6 +3,7 @@ import { GiSuperMushroom } from "react-icons/gi";
 
 const animationClassNames = [
   "top-[-2%] left-1/2",
+  "top-[-2%] right-1/2",
 
   "top-[5%] left-[25%]",
   "top-[5%] right-[25%]",
@@ -42,13 +43,13 @@ export const PhotoAnimation = () => {
     >
       {animationClassNames.map((className, i) => {
         const randomDelay = Number((Math.random() * 3).toFixed(2));
+        const color = i % 3 === 0 ? "text-secondary" : "text-white";
 
         return (
           <motion.div
             initial={{
               opacity: 0.5,
               scale: 0.7,
-              translateX: i === 0 ? "-50%" : 0,
             }}
             animate={{
               opacity: [0.5, 1, 0],
@@ -65,7 +66,7 @@ export const PhotoAnimation = () => {
             }}
             className={`absolute -z-10 ${className}`}
           >
-            <GiSuperMushroom className="text-6xl" />
+            <GiSuperMushroom className={`text-6xl ${color}`} />
           </motion.div>
         );
       })}
