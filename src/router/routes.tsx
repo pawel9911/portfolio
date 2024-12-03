@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 import { AppRoute } from "@components";
 import { ContactSection } from "../features/ContactSection";
 import { HomeSection } from "../features/HomeSection";
-import { ResumeSection } from "../features/ResumeSection";
+import { Resume } from "../features/resume";
 
 export const RedirectToHomePage = () => {
   return <Navigate to={paths.home} />;
@@ -21,7 +21,7 @@ export const routes: AppRoute[] = [
       },
       {
         path: paths.resume,
-        Component: ResumeSection,
+        Component: Resume,
       },
       {
         path: paths.contact,

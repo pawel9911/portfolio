@@ -5,7 +5,7 @@ import {
   StackSection,
 } from "./components";
 
-const ResumeSection = () => {
+const Resume = () => {
   return (
     <PageTransition>
       <div className="container text-9xl">
@@ -35,4 +35,4 @@ const ResumeSection = () => {
   );
 };
 
-export default ResumeSection;
+export default Resume;
