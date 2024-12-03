@@ -1,7 +1,7 @@
 import { PageTransition, Socials, TypingText } from "@components";
 import { Photo } from "./components";
 
-const HomeSection = () => {
+const Home = () => {
   return (
     <PageTransition>
       <section className="h-full">
@@ -39,4 +39,4 @@ const HomeSection = () => {
   );
 };
 
-export default HomeSection;
+export default Home;

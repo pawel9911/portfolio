@@ -2,7 +2,6 @@ export const paths = {
   dashboard: "/",
   home: "/home",
   resume: "/resume",
-  projects: "/projects",
   contact: "/contact",
 } as const;
 
@@ -12,6 +11,5 @@ export const pathLabels: Record<KnownPath, string> = {
   [paths.dashboard]: "",
   [paths.home]: "Home",
   [paths.resume]: "Resume",
-  [paths.projects]: "Projects",
   [paths.contact]: "Contact",
 };

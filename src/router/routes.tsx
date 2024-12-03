@@ -2,10 +2,9 @@ import { lazy } from "react";
 import { paths } from "./paths";
 import { Navigate } from "react-router-dom";
 import { AppRoute } from "@components";
-import { ContactSection } from "../features/ContactSection";
-import { HomeSection } from "../features/HomeSection";
-import { ProjectsSection } from "../features/ProjectsSection";
-import { ResumeSection } from "../features/ResumeSection";
+import { Contact } from "../features/contact";
+import { Home } from "../features/home";
+import { Resume } from "../features/resume";
 
 export const RedirectToHomePage = () => {
   return <Navigate to={paths.home} />;
@@ -18,19 +17,15 @@ export const routes: AppRoute[] = [
     nestedRoutes: [
       {
         path: paths.home,
-        Component: HomeSection,
+        Component: Home,
       },
       {
         path: paths.resume,
-        Component: ResumeSection,
-      },
-      {
-        path: paths.projects,
-        Component: ProjectsSection,
+        Component: Resume,
       },
       {
         path: paths.contact,
-        Component: ContactSection,
+        Component: Contact,
       },
     ],
   },

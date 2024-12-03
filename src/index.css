@@ -8,6 +8,9 @@
     @apply bg-primary;
     @apply text-white;
   }
+  ::selection {
+    @apply bg-secondary;
+  }
   .h1 {
     @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold;
   }
@@ -16,5 +19,14 @@
   }
   .h3 {
     @apply text-xl xl:text-2xl font-semibold;
+  }
+  .h4 {
+    @apply text-lg xl:text-xl font-semibold;
+  }
+  .title {
+    @apply text-3xl xs:text-4xl xl:text-5xl font-semibold text-center mb-8 xl:mb-10;
+  }
+  .body1 {
+    @apply text-base;
   }
 }
