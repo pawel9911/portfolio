@@ -1,5 +1,5 @@
 import { PageTransition } from "@components";
-import { StackSection } from "./components";
+import { ExperienceSection, StackSection } from "./components";
 
 const ResumeSection = () => {
   return (
@@ -19,9 +19,7 @@ const ResumeSection = () => {
 
         <StackSection />
 
-        <section id="experience" className="mt-8 mb-16">
-          <h2 className="title">Experience</h2>
-        </section>
+        <ExperienceSection />
 
         <section id="myProjects" className="mt-8 mb-16">
           <h2 className="title">My projects</h2>
