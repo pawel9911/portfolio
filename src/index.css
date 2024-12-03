@@ -9,7 +9,7 @@
     @apply text-white;
   }
   ::selection {
-    @apply bg-secondary;
+    @apply bg-secondary text-white;
   }
   .h1 {
     @apply text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-semibold;
