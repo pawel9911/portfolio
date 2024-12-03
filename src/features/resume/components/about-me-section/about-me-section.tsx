@@ -13,9 +13,9 @@ export const AboutMeSection = () => {
             <div
               key={i}
               // className={`flex gap-10 shadow-item  ${ // v3
-              className={`flex gap-10  ${
+              className={`flex gap-10 ${
                 isEven ? "flex-row" : "flex-row-reverse"
-              } `}
+              }`}
             >
               {e.images.map(({ src, signature }, id) => (
                 <div
