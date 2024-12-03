@@ -15,7 +15,7 @@ export const AboutMeSection = () => {
                 isEven ? "flex-row" : "flex-row-reverse"
               } `}
             >
-              {e.images.map(({ src }, id) => (
+              {e.images.map(({ src, signature }, id) => (
                 <div
                   key={id}
                   className={`p-6 pb-16 shadow-item shadow-black bg-white ${
@@ -27,6 +27,9 @@ export const AboutMeSection = () => {
                     alt="me"
                     className="object-contain h-60 w-48 max-w-none bg-gray-100"
                   />
+                  <p className="signature absolute bottom-6 right-7">
+                    {signature}
+                  </p>
                 </div>
               ))}
               <div>

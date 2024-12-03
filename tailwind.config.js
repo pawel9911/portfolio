@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         primary: ["Inconsolata", "monospace"],
+        signature: ["Dancing Script", "cursive"],
       },
       colors: {
         primary: "rgb(18 24 40 / <alpha-value>)",

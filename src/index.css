@@ -29,4 +29,7 @@
   .body1 {
     @apply text-base;
   }
+  .signature {
+    @apply text-secondary text-xl font-signature;
+  }
 }
