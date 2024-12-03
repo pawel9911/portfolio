@@ -15,6 +15,10 @@ const ResumeSection = () => {
 
         <EducationSection />
 
+        <section id="courses" className="mt-8 mb-16">
+          <h2 className="title">Courses</h2>
+        </section>
+
         <section id="mySkills" className="mt-8 mb-16">
           <h2 className="title">My skills</h2>
         </section>
