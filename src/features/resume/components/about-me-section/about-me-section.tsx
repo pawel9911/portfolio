@@ -4,6 +4,7 @@ export const AboutMeSection = () => {
   return (
     <section id="aboutMe" className="mt-8 mb-16 max-w-4xl mx-auto">
       <h2 className="title">About me</h2>
+      {/* <div className="grid gap-20 shadow-item"> v2 */}
       <div className="grid gap-20">
         {passion.map((e, i) => {
           const isEven = i % 2 === 0;
@@ -11,7 +12,8 @@ export const AboutMeSection = () => {
           return (
             <div
               key={i}
-              className={`flex gap-10 ${
+              // className={`flex gap-10 shadow-item  ${ // v3
+              className={`flex gap-10  ${
                 isEven ? "flex-row" : "flex-row-reverse"
               } `}
             >
@@ -19,7 +21,11 @@ export const AboutMeSection = () => {
                 <div
                   key={id}
                   className={`p-6 pb-16 shadow-item shadow-black bg-white ${
-                    isEven ? "-rotate-12" : "rotate-12"
+                    isEven
+                      ? // ? "-rotate-12 translate-x-14 translate-y-4" // v1
+                        "-rotate-12"
+                      : // : "rotate-12 -translate-x-14 translate-y-4" // v1
+                        "rotate-12"
                   } `}
                 >
                   <img
@@ -32,6 +38,7 @@ export const AboutMeSection = () => {
                   </p>
                 </div>
               ))}
+              {/* <div className="shadow-item"> v1 */}
               <div>
                 <p className="body1 p-10">{e.text}</p>
               </div>
