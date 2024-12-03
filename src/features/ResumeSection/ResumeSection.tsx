@@ -9,17 +9,17 @@ const ResumeSection = () => {
   return (
     <PageTransition>
       <div className="container text-9xl">
-        <section id="aboutMe" className="mt-8 mb-16">
+        <section id="aboutMe" className="mt-8 mb-16 hidden">
           <h2 className="title">About me</h2>
         </section>
 
         <EducationSection />
 
-        <section id="courses" className="mt-8 mb-16">
+        <section id="courses" className="mt-8 mb-16 hidden">
           <h2 className="title">Courses</h2>
         </section>
 
-        <section id="mySkills" className="mt-8 mb-16">
+        <section id="mySkills" className="mt-8 mb-16 hidden">
           <h2 className="title">My skills</h2>
         </section>
 
@@ -27,7 +27,7 @@ const ResumeSection = () => {
 
         <ExperienceSection />
 
-        <section id="myProjects" className="mt-8 mb-16">
+        <section id="myProjects" className="mt-8 mb-16 hidden">
           <h2 className="title">My projects</h2>
         </section>
       </div>
