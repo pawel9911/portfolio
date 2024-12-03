@@ -13,7 +13,7 @@ import { RiJavascriptFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMui, SiTypescript } from "react-icons/si";
 
 const iconClassName: SVGAttributes<SVGElement>["className"] =
-  "text-5xl sm:text-6xl md:text-7xl";
+  "text-4xl xs:text-5xl md:text-6xl";
 
 export const stack: { title: string; icon: ReturnType<IconType> }[] = [
   {
