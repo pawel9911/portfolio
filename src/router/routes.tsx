@@ -3,7 +3,7 @@ import { paths } from "./paths";
 import { Navigate } from "react-router-dom";
 import { AppRoute } from "@components";
 import { ContactSection } from "../features/ContactSection";
-import { HomeSection } from "../features/HomeSection";
+import { Home } from "../features/home";
 import { Resume } from "../features/resume";
 
 export const RedirectToHomePage = () => {
@@ -17,7 +17,7 @@ export const routes: AppRoute[] = [
     nestedRoutes: [
       {
         path: paths.home,
-        Component: HomeSection,
+        Component: Home,
       },
       {
         path: paths.resume,
