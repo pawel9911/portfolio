@@ -1,5 +1,6 @@
 import { PageTransition } from "@components";
 import {
+  AboutMeSection,
   EducationSection,
   ExperienceSection,
   StackSection,
@@ -9,9 +10,7 @@ const Resume = () => {
   return (
     <PageTransition>
       <div className="container text-9xl">
-        <section id="aboutMe" className="mt-8 mb-16 hidden">
-          <h2 className="title">About me</h2>
-        </section>
+        <AboutMeSection />
 
         <EducationSection />
 
