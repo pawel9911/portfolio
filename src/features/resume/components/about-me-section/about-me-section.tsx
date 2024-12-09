@@ -2,7 +2,7 @@ import { passion } from "./constants";
 
 export const AboutMeSection = () => {
   return (
-    <section id="aboutMe" className="mt-8 mb-24 max-w-4xl mx-auto">
+    <section id="aboutMe" className="mt-8 mb-40 max-w-4xl mx-auto">
       <h2 className="title">About me</h2>
       <div className="grid gap-20">
         {passion.map((e, i) => {
