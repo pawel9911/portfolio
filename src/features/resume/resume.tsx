@@ -4,6 +4,7 @@ import {
   CoursesSection,
   EducationSection,
   ExperienceSection,
+  ProjectsSection,
   StackSection,
 } from "./components";
 
@@ -12,9 +13,7 @@ const Resume = () => {
     <PageTransition>
       <div className="container text-9xl">
         <AboutMeSection />
-
         <EducationSection />
-
         <CoursesSection />
 
         <section id="mySkills" className="mt-8 mb-16 hidden">
@@ -22,12 +21,8 @@ const Resume = () => {
         </section>
 
         <StackSection />
-
         <ExperienceSection />
-
-        <section id="myProjects" className="mt-8 mb-16 hidden">
-          <h2 className="title">My projects</h2>
-        </section>
+        <ProjectsSection />
       </div>
     </PageTransition>
   );
