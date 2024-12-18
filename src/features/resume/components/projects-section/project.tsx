@@ -1,6 +1,30 @@
 import { motion, useCycle } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
 
+const variants = {
+  open: {
+    transform: "translateY(0)",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+      when: "beforeChildren",
+    },
+    willChange: "transform",
+  },
+  closed: {
+    transform: "translateY(100%)",
+    transition: {
+      delay: 0.3,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+      when: "afterChildren",
+    },
+    willChange: "transform",
+  },
+};
+
 interface ProjectProps {
   data: {
     id: number;
@@ -14,7 +38,7 @@ interface ProjectProps {
 export const Project = ({
   data: { id, name, category, tools, description },
 }: ProjectProps) => {
-  const [statusNav, toggleStatusNav] = useCycle(false, true);
+  const [status, toggleStatus] = useCycle(false, true);
 
   return (
     <li key={id}>
@@ -30,7 +54,8 @@ export const Project = ({
             </div>
           </div>
           <motion.div
-            animate={statusNav ? { translateY: 0 } : { translateY: "100%" }}
+            animate={status ? "open" : "closed"}
+            variants={variants}
             className="p-4 bg-black/85"
           >
             <code className="body1">
@@ -71,8 +96,8 @@ export const Project = ({
         </div>
         <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
           <motion.button
-            onClick={() => toggleStatusNav()}
-            animate={statusNav ? { transform: "rotate(180deg)" } : {}}
+            onClick={() => toggleStatus()}
+            animate={status ? { transform: "rotate(180deg)" } : {}}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="p-2 size-16 inline-flex items-center justify-center shadow-item shadow-black bg-primary rounded-full 
