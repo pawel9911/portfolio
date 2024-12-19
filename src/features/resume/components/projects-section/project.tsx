@@ -40,8 +40,8 @@ export const Project = ({
 
   return (
     <li>
-      <div className="shadow-item shadow-black relative">
-        <div className="overflow-hidden">
+      <div className="shadow-item shadow-black relative h-full">
+        <div className="overflow-hidden h-full">
           <div className="absolute top-0 left-0 bg-primary h-full">
             <div>
               <img src="assets/example.jpg" className="" alt="" />
@@ -54,7 +54,7 @@ export const Project = ({
           <motion.div
             animate={status ? "open" : "closed"}
             variants={variants}
-            className="p-4 bg-black/85"
+            className="p-4 bg-black/85 h-full"
           >
             <code className="body1">
               <div className="blink">
