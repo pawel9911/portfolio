@@ -41,10 +41,14 @@ export const Project = ({
   return (
     <li>
       <div className="shadow-item shadow-black relative h-full">
-        <div className="overflow-hidden h-full">
-          <div className="absolute top-0 left-0 bg-primary h-full">
+        <div className="overflow-hidden relative h-full">
+          <div className="bg-primary h-full">
             <div>
-              <img src="assets/example.jpg" className="" alt="" />
+              <img
+                src="assets/example.jpg"
+                className="h-80 max-w-none"
+                alt=""
+              />
             </div>
             <div className="grid p-4 gap-3">
               <span className="body1">{category}</span>
@@ -54,7 +58,7 @@ export const Project = ({
           <motion.div
             animate={status ? "open" : "closed"}
             variants={variants}
-            className="p-4 bg-black/85 h-full"
+            className="p-4 bg-black/85 h-full absolute top-0 left-0"
           >
             <code className="body1">
               <div className="blink">
