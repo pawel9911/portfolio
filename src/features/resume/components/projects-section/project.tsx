@@ -26,7 +26,6 @@ const variants = {
 
 interface ProjectProps {
   data: {
-    id: number;
     name: string;
     category: string;
     tools: string[];
@@ -35,12 +34,12 @@ interface ProjectProps {
 }
 
 export const Project = ({
-  data: { id, name, category, tools, description },
+  data: { name, category, tools, description },
 }: ProjectProps) => {
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
-    <li key={id}>
+    <li>
       <div className="shadow-item shadow-black relative">
         <div className="overflow-hidden">
           <div className="absolute top-0 left-0 bg-primary h-full">

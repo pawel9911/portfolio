@@ -11,8 +11,8 @@ export const ProjectsSection = () => {
       </h3>
 
       <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-10">
-        {projects.map((data) => (
-          <Project data={data} />
+        {projects.map(({ id, ...data }) => (
+          <Project key={id} data={data} />
         ))}
       </ul>
     </section>
