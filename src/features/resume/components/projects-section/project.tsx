@@ -94,8 +94,7 @@ export const Project = ({
         </div>
         <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
           <motion.button
-            onHoverStart={() => toggleStatus()}
-            onHoverEnd={() => toggleStatus()}
+            onClick={() => toggleStatus()}
             animate={status ? { transform: "rotate(180deg)" } : {}}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
