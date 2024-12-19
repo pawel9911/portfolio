@@ -10,7 +10,7 @@ export const ProjectsSection = () => {
         created with each project containing its own case study
       </h3>
 
-      <ul className="grid grid-cols-3 gap-10">
+      <ul className="grid md:grid-cols-2 xl:grid-cols-3 gap-y-16 gap-x-10">
         {projects.map((data) => (
           <Project data={data} />
         ))}
