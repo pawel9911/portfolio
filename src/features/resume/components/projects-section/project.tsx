@@ -6,8 +6,8 @@ const variants = {
     transform: "translateY(0)",
     transition: {
       type: "spring",
-      stiffness: 20,
-      restDelta: 2,
+      stiffness: 300,
+      damping: 40,
       when: "beforeChildren",
     },
     willChange: "transform",
@@ -15,10 +15,9 @@ const variants = {
   closed: {
     transform: "translateY(100%)",
     transition: {
-      delay: 0.3,
       type: "spring",
-      stiffness: 400,
-      damping: 40,
+      stiffness: 20,
+      restDelta: 2,
       when: "afterChildren",
     },
     willChange: "transform",
@@ -96,7 +95,8 @@ export const Project = ({
         </div>
         <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
           <motion.button
-            onClick={() => toggleStatus()}
+            onHoverStart={() => toggleStatus()}
+            onHoverEnd={() => toggleStatus()}
             animate={status ? { transform: "rotate(180deg)" } : {}}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
