@@ -12,11 +12,13 @@ export const AboutMeSection = () => {
             <div
               key={i}
               className={`flex gap-10 ${
-                isEven ? "flex-row" : "flex-row-reverse"
+                isEven
+                  ? "flex-col-reverse lg:flex-row"
+                  : "flex-col-reverse lg:flex-row-reverse"
               }`}
             >
-              <div className="w-full max-w-60 shrink-0">
-                <div className="relative">
+              <div className="w-full max-w-60 mx-auto shrink-0">
+                <div className="relative w-full h-80">
                   {e.images.map(({ src, signature }, id) => {
                     const rotate = () => {
                       switch (id) {
@@ -33,12 +35,12 @@ export const AboutMeSection = () => {
                     return (
                       <div
                         key={id}
-                        className={`p-6 pb-16 absolute shadow-item shadow-black bg-white ${rotate()}`}
+                        className={`p-6 pb-16 absolute h-full shadow-item shadow-black bg-white ${rotate()}`}
                       >
                         <img
                           src={src}
                           alt="me"
-                          className="object-contain h-60 w-48 max-w-none bg-gray-100"
+                          className="object-contain h-full bg-gray-100"
                         />
                         <p className="signature absolute bottom-6 right-7">
                           {signature}
