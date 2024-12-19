@@ -46,11 +46,11 @@ export const Project = ({
             <div>
               <img
                 src="assets/example.jpg"
-                className="h-80 max-w-none"
+                className="h-72 max-w-none"
                 alt=""
               />
             </div>
-            <div className="grid p-4 gap-3">
+            <div className="grid p-7 pb-10 gap-3">
               <span className="body1">{category}</span>
               <h2 className="h3">{name}</h2>
             </div>
