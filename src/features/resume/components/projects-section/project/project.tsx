@@ -1,5 +1,6 @@
 import { motion, useCycle } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { ProjectDescription } from "./project-description";
 
 const variants = {
   open: {
@@ -33,9 +34,8 @@ interface ProjectProps {
   };
 }
 
-export const Project = ({
-  data: { name, category, tools, description },
-}: ProjectProps) => {
+export const Project = ({ data }: ProjectProps) => {
+  const { name, category } = data;
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
@@ -55,40 +55,7 @@ export const Project = ({
           variants={variants}
           className="p-4 bg-black/85 h-full absolute top-0 left-0"
         >
-          <code className="body1">
-            <div>
-              <span className="mr-2 text-secondary">const</span>
-              <span className="mr-2">project</span>
-              <span className="mr-2 text-secondary">=</span>
-              <span>&#123;</span>
-            </div>
-            <div className="ml-4 lg:ml-8 mr-2">
-              <span>name: </span>
-              <span className="text-contrast">"{name}"</span>
-              <span>,</span>
-            </div>
-            <div className="ml-4 lg:ml-8 mr-2">
-              <span>tools: </span>
-              <span>[</span>
-              {tools.map((tool, i) => (
-                <span key={i} className="text-contrast">
-                  "{tool}"
-                  <span className="text-white">
-                    {tools.length - 1 !== i ? ", " : ""}
-                  </span>
-                </span>
-              ))}
-              <span>],</span>
-            </div>
-            <div className="ml-4 lg:ml-8 mr-2">
-              <span>description: </span>
-              <span className="text-contrast">"{description}"</span>
-              <span>,</span>
-            </div>
-            <div>
-              <span>&#125;</span>
-            </div>
-          </code>
+          <ProjectDescription data={data} />
         </motion.div>
       </div>
       <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
