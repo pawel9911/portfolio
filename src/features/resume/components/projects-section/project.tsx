@@ -61,14 +61,14 @@ export const Project = ({
             className="p-4 bg-black/85 h-full absolute top-0 left-0"
           >
             <code className="body1">
-              <div className="blink">
+              <div>
                 <span className="mr-2 text-secondary">const</span>
                 <span className="mr-2">project</span>
                 <span className="mr-2 text-secondary">=</span>
                 <span>&#123;</span>
               </div>
-              <div>
-                <span className="ml-4 lg:ml-8 mr-2">name:</span>
+              <div className="ml-4 lg:ml-8 mr-2">
+                <span>name: </span>
                 <span className="text-contrast">"{name}"</span>
                 <span>,</span>
               </div>
