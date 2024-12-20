@@ -41,16 +41,14 @@ export const Project = ({ data }: ProjectProps) => {
   return (
     <div className="shadow-item shadow-black relative h-full">
       <div className="overflow-hidden relative h-full">
-        <div className="bg-primary h-full">
-          <img
-            src="assets/example.jpg"
-            className="h-72 w-full object-cover"
-            alt={`${name} - image`}
-          />
-          <div className="grid p-7 pb-10 gap-1">
-            <span className="text-sm text-secondary">{category}</span>
-            <h2 className="text-lg font-bold">{name}</h2>
-          </div>
+        <img
+          src="assets/example.jpg"
+          className="h-72 w-full object-cover"
+          alt={`${name} - image`}
+        />
+        <div className="grid p-7 pb-10 gap-1">
+          <span className="text-sm text-secondary">{category}</span>
+          <h2 className="text-lg font-bold">{name}</h2>
         </div>
         <motion.div
           animate={status ? "open" : "closed"}
