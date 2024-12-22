@@ -53,7 +53,7 @@ export const Project = ({ data }: ProjectProps) => {
         <motion.div
           animate={status ? "open" : "closed"}
           variants={variants}
-          className="p-4 bg-black/85 h-full absolute top-0 left-0"
+          className="p-4 bg-black/85 h-full absolute top-0 left-0 overflow-auto"
         >
           <ProjectDescription data={data} />
         </motion.div>
