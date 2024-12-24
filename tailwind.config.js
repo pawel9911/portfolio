@@ -36,6 +36,9 @@ export default {
       screens: {
         xs: "475px",
       },
+      zIndex: {
+        60: 60,
+      },
     },
   },
   plugins: [],

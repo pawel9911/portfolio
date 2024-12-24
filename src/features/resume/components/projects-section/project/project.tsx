@@ -53,12 +53,12 @@ export const Project = ({ data }: ProjectProps) => {
         <motion.div
           animate={status ? "open" : "closed"}
           variants={variants}
-          className="p-4 bg-black/85 h-full absolute top-0 left-0 overflow-auto"
+          className="p-4 bg-black/85 h-full absolute top-0 left-0 overflow-auto z-50"
         >
           <ProjectDescription data={data} />
         </motion.div>
       </div>
-      <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2">
+      <div className="flex absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2 z-60">
         <motion.button
           onClick={() => toggleStatus()}
           animate={status ? { transform: "rotate(180deg)" } : {}}
