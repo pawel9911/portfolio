@@ -107,6 +107,7 @@ const ContactSection = () => {
                 type="text"
                 value={formData.firstName}
                 onChange={handleChange}
+                required
               />
               <Input
                 label="Your last name"
@@ -115,6 +116,7 @@ const ContactSection = () => {
                 type="text"
                 value={formData.lastName}
                 onChange={handleChange}
+                required
                 from="right"
               />
               <Input
@@ -124,6 +126,7 @@ const ContactSection = () => {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
               <Input
                 label="Subject"
@@ -132,6 +135,7 @@ const ContactSection = () => {
                 type="text"
                 value={formData.subject}
                 onChange={handleChange}
+                required
                 from="right"
               />
             </div>
@@ -141,6 +145,7 @@ const ContactSection = () => {
               placeholder="How can I help you?"
               value={formData.message}
               onChange={handleChange}
+              required
             />
             <Button type="submit">Send Message</Button>
           </form>
