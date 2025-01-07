@@ -1,15 +1,41 @@
+import { motion, Variants } from "framer-motion";
 import { passion } from "./constants";
+
+const cardVariants: Variants = {
+  offscreen: (isEven: boolean) => ({
+    x: isEven ? -400 : 400,
+    opacity: 0,
+    transition: {
+      type: "spring",
+      duration: 0.8,
+    },
+  }),
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 export const AboutMeSection = () => {
   return (
     <section id="aboutMe" className="mt-8 mb-40 max-w-4xl mx-auto">
       <h2 className="title">About me</h2>
-      <div className="grid gap-20">
+      <motion.div className="grid gap-20">
         {passion.map((e, i) => {
           const isEven = i % 2 === 0;
 
           return (
-            <div
+            <motion.div
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ amount: 0.8 }}
+              variants={cardVariants}
+              custom={isEven}
               key={i}
               className={`flex gap-10 ${
                 isEven
@@ -53,10 +79,10 @@ export const AboutMeSection = () => {
               <div>
                 <p className="body1 p-10">{e.text}</p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
