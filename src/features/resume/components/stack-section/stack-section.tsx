@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { stack } from "./constants";
 
 const gaps = "gap-8 lg:gap-7 xl:gap-10";
@@ -10,13 +11,15 @@ export const StackSection = () => {
       <h2 className="title">Stack</h2>
       <ul className={`grid ${cols} ${gaps}`}>
         {stack.map((e, i) => (
-          <li
+          <motion.li
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             key={i}
-            className={`flex flex-col items-center rounded-lg shadow-item ${padding}`}
+            className={`flex flex-col items-center rounded-lg shadow-item cursor-pointer ${padding}`}
           >
             {e.icon}
             <p className="h3 mt-1">{e.title}</p>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>
