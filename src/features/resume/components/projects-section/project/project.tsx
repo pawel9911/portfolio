@@ -1,5 +1,6 @@
 import { motion, useCycle } from "framer-motion";
 import { MdOutlineKeyboardDoubleArrowUp } from "react-icons/md";
+import { verticalScroll } from "../../../utils";
 import { ProjectDescription } from "./project-description";
 
 const variants = {
@@ -39,7 +40,13 @@ export const Project = ({ data }: ProjectProps) => {
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
-    <div className="shadow-item shadow-black relative h-full">
+    <motion.div
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ amount: 0.8 }}
+      variants={verticalScroll}
+      className="shadow-item shadow-black relative h-full"
+    >
       <div className="overflow-hidden relative h-full">
         <img
           src="assets/example.jpg"
@@ -70,6 +77,6 @@ export const Project = ({ data }: ProjectProps) => {
           <MdOutlineKeyboardDoubleArrowUp />
         </motion.button>
       </div>
-    </div>
+    </motion.div>
   );
 };

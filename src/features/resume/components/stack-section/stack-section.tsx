@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { verticalScroll } from "../../utils";
 import { stack } from "./constants";
 
 const gaps = "gap-8 lg:gap-7 xl:gap-10";
@@ -12,8 +13,12 @@ export const StackSection = () => {
       <ul className={`grid ${cols} ${gaps}`}>
         {stack.map((e, i) => (
           <motion.li
+            initial="offscreen"
+            whileInView="onscreen"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            viewport={{ amount: 0.8 }}
+            variants={verticalScroll}
             key={i}
             className={`flex flex-col items-center rounded-lg shadow-item cursor-pointer ${padding}`}
           >

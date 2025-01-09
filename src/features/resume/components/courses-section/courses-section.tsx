@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { courses } from "./constants";
+import { verticalScroll } from "../../utils";
 
 export const CoursesSection = () => {
   return (
     <section id="courses" className="mt-8 mb-16">
       <h2 className="title">Courses</h2>
       {courses.map((e, i) => (
-        <div key={i} className="flex flex-col items-center justify-center">
+        <motion.div
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ amount: 0.8 }}
+          variants={verticalScroll}
+          key={i}
+          className="flex flex-col items-center justify-center"
+        >
           <h2 className="h3 text-center">{e.name}</h2>
           <h3 className="h4 text-center text-secondary mb-4">
             {e.date.from} — {e.date.to}
@@ -27,7 +35,7 @@ export const CoursesSection = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       ))}
     </section>
   );
