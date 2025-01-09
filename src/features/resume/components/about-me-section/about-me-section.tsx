@@ -1,25 +1,6 @@
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import { horizontalScroll } from "../../utils";
 import { passion } from "./constants";
-
-const variants: Variants = {
-  offscreen: (isEven: boolean) => ({
-    x: isEven ? -400 : 400,
-    opacity: 0,
-    transition: {
-      type: "spring",
-      duration: 0.8,
-    },
-  }),
-  onscreen: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
 
 export const AboutMeSection = () => {
   return (
@@ -34,7 +15,7 @@ export const AboutMeSection = () => {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ amount: 0.8 }}
-              variants={variants}
+              variants={horizontalScroll}
               custom={isEven}
               key={i}
               className={`flex gap-10 ${
