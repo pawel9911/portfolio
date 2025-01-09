@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 import { passion } from "./constants";
 
-const cardVariants: Variants = {
+const variants: Variants = {
   offscreen: (isEven: boolean) => ({
     x: isEven ? -400 : 400,
     opacity: 0,
@@ -34,7 +34,7 @@ export const AboutMeSection = () => {
               initial="offscreen"
               whileInView="onscreen"
               viewport={{ amount: 0.8 }}
-              variants={cardVariants}
+              variants={variants}
               custom={isEven}
               key={i}
               className={`flex gap-10 ${
