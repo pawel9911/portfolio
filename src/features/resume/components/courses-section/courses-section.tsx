@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { courses } from "./constants";
 
 export const CoursesSection = () => {
@@ -16,12 +17,14 @@ export const CoursesSection = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-6 my-10">
             {e.tags.map((e, i) => (
-              <div
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 key={i}
-                className="text-base py-2 px-4 rounded-2xl shadow-item"
+                className="text-base py-2 px-4 rounded-2xl shadow-item cursor-pointer"
               >
                 {e}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
