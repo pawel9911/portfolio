@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
-import { verticalScroll } from "../../utils";
 import { stack } from "./constants";
+import { VerticalScroll } from "@components";
 
 const gaps = "gap-8 lg:gap-7 xl:gap-10";
 const cols = "grid-cols-2 xs:grid-cols-3 md:grid-cols-4 lg:grid-cols-6";
@@ -12,19 +11,16 @@ export const StackSection = () => {
       <h2 className="title">Stack</h2>
       <ul className={`grid ${cols} ${gaps}`}>
         {stack.map((e, i) => (
-          <motion.li
-            initial="offscreen"
-            whileInView="onscreen"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            viewport={{ amount: 0.8 }}
-            variants={verticalScroll}
-            key={i}
-            className={`flex flex-col items-center rounded-lg shadow-item cursor-pointer ${padding}`}
-          >
-            {e.icon}
-            <p className="h3 mt-1">{e.title}</p>
-          </motion.li>
+          <li key={i}>
+            <VerticalScroll
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`flex flex-col items-center rounded-lg shadow-item cursor-pointer ${padding}`}
+            >
+              {e.icon}
+              <p className="h3 mt-1">{e.title}</p>
+            </VerticalScroll>
+          </li>
         ))}
       </ul>
     </section>
