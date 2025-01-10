@@ -1,22 +1,16 @@
-import { motion } from "framer-motion";
-import { horizontalScroll } from "../../utils";
+import { HorizontalScroll } from "@components";
 import { passion } from "./constants";
 
 export const AboutMeSection = () => {
   return (
     <section id="aboutMe" className="mt-8 mb-40 max-w-4xl mx-auto">
       <h2 className="title">About me</h2>
-      <motion.div className="grid gap-20">
+      <div className="grid gap-20">
         {passion.map((e, i) => {
           const isEven = i % 2 === 0;
 
           return (
-            <motion.div
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ amount: 0.8 }}
-              variants={horizontalScroll}
-              custom={isEven}
+            <div
               key={i}
               className={`flex gap-10 ${
                 isEven
@@ -24,7 +18,10 @@ export const AboutMeSection = () => {
                   : "flex-col-reverse lg:flex-row-reverse"
               }`}
             >
-              <div className="w-full max-w-60 mx-auto shrink-0">
+              <HorizontalScroll
+                custom={isEven}
+                className="w-full max-w-60 mx-auto shrink-0"
+              >
                 <div className="relative w-full h-80">
                   {e.images.map(({ src, signature }, id) => {
                     const rotate = () => {
@@ -56,14 +53,14 @@ export const AboutMeSection = () => {
                     );
                   })}
                 </div>
-              </div>
-              <div>
+              </HorizontalScroll>
+              <HorizontalScroll custom={isEven}>
                 <p className="body1 p-10">{e.text}</p>
-              </div>
-            </motion.div>
+              </HorizontalScroll>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </section>
   );
 };
