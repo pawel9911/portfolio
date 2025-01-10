@@ -1,9 +1,15 @@
-import { motion, MotionProps, Variants } from "framer-motion";
-import { HTMLAttributes } from "react";
+import {
+  motion,
+  MotionProps,
+  useMotionValueEvent,
+  useScroll,
+  Variants,
+} from "framer-motion";
+import { HTMLAttributes, useState } from "react";
 
 export const variants: Variants = {
-  offscreen: (isEven: boolean) => ({
-    y: isEven ? -100 : 100,
+  offscreen: (direction: boolean) => ({
+    y: direction ? -100 : 100,
     opacity: 0,
     transition: {
       type: "spring",
@@ -30,6 +36,14 @@ export const VerticalScroll = ({
   className,
   ...props
 }: VerticalScrollProps) => {
+  const { scrollY } = useScroll();
+  const [scrollDirection, setScrollDirection] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (current) => {
+    const diff = current - (scrollY.getPrevious() || 0);
+    setScrollDirection(diff > 0);
+  });
+
   return (
     <motion.div
       {...props}
@@ -38,6 +52,7 @@ export const VerticalScroll = ({
       viewport={{ amount: 0.8 }}
       variants={variants}
       className={className}
+      custom={scrollDirection}
     >
       {children}
     </motion.div>
