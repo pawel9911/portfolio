@@ -34,6 +34,7 @@ interface VerticalScrollProps extends MotionProps {
 export const VerticalScroll = ({
   children,
   className,
+  viewport = { amount: 0.8 },
   ...props
 }: VerticalScrollProps) => {
   const { scrollY } = useScroll();
@@ -46,12 +47,12 @@ export const VerticalScroll = ({
 
   return (
     <motion.div
+      className={className}
+      viewport={viewport}
       {...props}
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
       variants={variants}
-      className={className}
       custom={scrollDirection}
     >
       {children}

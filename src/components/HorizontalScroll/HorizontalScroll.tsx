@@ -33,12 +33,12 @@ export const HorizontalScroll = ({
 }: HorizontalScrollProps) => {
   return (
     <motion.div
+      className={className}
+      viewport={viewport}
+      {...props}
       initial="offscreen"
       whileInView="onscreen"
       variants={variants}
-      viewport={viewport}
-      className={className}
-      {...props}
     >
       {children}
     </motion.div>
