@@ -1,5 +1,6 @@
 export * from "./Button";
 export * from "./Header";
+export * from "./HorizontalScroll";
 export * from "./Input";
 export * from "./PageTransition";
 export * from "./Router";
