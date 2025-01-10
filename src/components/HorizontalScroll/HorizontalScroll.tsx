@@ -3,7 +3,7 @@ import { HTMLAttributes } from "react";
 
 const variants: Variants = {
   offscreen: (toLeft: boolean) => ({
-    x: toLeft ? -400 : 400,
+    x: toLeft ? -100 : 100,
     opacity: 0,
     transition: {
       type: "spring",
@@ -21,23 +21,24 @@ const variants: Variants = {
   },
 };
 
-interface HorizontalScrollProps extends HTMLAttributes<HTMLDivElement> {
-  custom?: MotionProps["custom"];
+interface HorizontalScrollProps extends MotionProps {
+  className?: HTMLAttributes<HTMLDivElement>["className"];
 }
 
 export const HorizontalScroll = ({
   children,
-  custom,
   className,
+  viewport = { amount: 0.4 },
+  ...props
 }: HorizontalScrollProps) => {
   return (
     <motion.div
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ amount: 0.8 }}
       variants={variants}
-      custom={custom}
+      viewport={viewport}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>
