@@ -40,7 +40,10 @@ export const Project = ({ data }: ProjectProps) => {
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
-    <VerticalScroll className="shadow-item shadow-black relative h-full">
+    <VerticalScroll
+      viewport={{ amount: 0.4 }}
+      className="shadow-item shadow-black relative h-full"
+    >
       <div className="overflow-hidden relative h-full">
         <img
           src="assets/example.jpg"
