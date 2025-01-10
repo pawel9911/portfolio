@@ -8,3 +8,4 @@ export * from "./Socials";
 export * from "./Textarea";
 export * from "./Toast";
 export * from "./TypingText";
+export * from "./VerticalScroll";
