@@ -3,7 +3,7 @@ import { Project } from "./project";
 
 export const ProjectsSection = () => {
   return (
-    <section id="myProjects" className="mt-8 mb-36">
+    <section id="myProjects" className="mt-8 mb-40">
       <h2 className="title">My projects</h2>
       <h3 className="h3 mb-10 text-center">
         Here you will find some of the personal and clients projects that I
