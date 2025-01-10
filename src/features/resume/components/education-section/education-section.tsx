@@ -1,17 +1,12 @@
-import { motion } from "framer-motion";
+import { VerticalScroll } from "@components";
 import { education } from "./constants";
-import { verticalScroll } from "../../utils";
 
 export const EducationSection = () => {
   return (
     <section id="education" className="mt-8 mb-16">
       <h2 className="title">Education</h2>
       {education.map((e, i) => (
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ amount: 0.8 }}
-          variants={verticalScroll}
+        <VerticalScroll
           key={i}
           className="flex flex-col items-center justify-center"
         >
@@ -23,7 +18,7 @@ export const EducationSection = () => {
           <p className="body1 text-center sm:w-3/4 md:w-2/3 lg:w-1/2">
             {e.description}
           </p>
-        </motion.div>
+        </VerticalScroll>
       ))}
     </section>
   );
