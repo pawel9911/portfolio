@@ -13,7 +13,7 @@ export const CoursesSection = () => {
               {e.date.from} — {e.date.to}
             </h3>
             <h3 className="h4 text-center mb-2">{e.profile}</h3>
-            <p className="body1 text-center sm:w-3/4 md:w-2/3 lg:w-1/2">
+            <p className="body1 mx-auto sm:w-3/4 md:w-2/3 lg:w-1/2">
               {e.description}
             </p>
           </VerticalScroll>
