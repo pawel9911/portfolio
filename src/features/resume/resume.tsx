@@ -11,7 +11,7 @@ import {
 const Resume = () => {
   return (
     <PageTransition>
-      <div className="container text-9xl">
+      <div className="container text-9xl overflow-hidden">
         <AboutMeSection />
         <EducationSection />
         <CoursesSection />

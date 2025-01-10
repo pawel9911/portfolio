@@ -1,3 +1,4 @@
+import { HorizontalScroll } from "@components";
 import { GiSuperMushroom } from "react-icons/gi";
 import { experience } from "./constants";
 
@@ -7,7 +8,10 @@ export const ExperienceSection = () => {
       <h2 className="title text-left">Experience</h2>
       {experience.map((e) => (
         <div key={e.id} className="grid grid-cols-12 gap-2 mb-10">
-          <div className="col-span-12 sm:col-span-4 lg:col-span-4">
+          <HorizontalScroll
+            custom={true}
+            className="col-span-12 sm:col-span-4 lg:col-span-4"
+          >
             <h3 className="h4 text-center sm:text-left">
               {e.date.from} —{" "}
               {e.date.to ? (
@@ -16,8 +20,11 @@ export const ExperienceSection = () => {
                 <span className="text-secondary">Present</span>
               )}
             </h3>
-          </div>
-          <div className="col-span-12 sm:col-span-8 lg:col-span-6">
+          </HorizontalScroll>
+          <HorizontalScroll
+            custom={false}
+            className="col-span-12 sm:col-span-8 lg:col-span-6"
+          >
             <div className="mb-3">
               <h2 className="h3 text-center sm:text-left">{e.position}</h2>
               <p className="body1 text-center sm:text-left">
@@ -38,7 +45,7 @@ export const ExperienceSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </HorizontalScroll>
         </div>
       ))}
     </section>
