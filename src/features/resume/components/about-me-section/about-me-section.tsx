@@ -4,7 +4,7 @@ import { passion } from "./constants";
 export const AboutMeSection = () => {
   return (
     <section id="aboutMe" className="mt-8 mb-40 max-w-4xl mx-auto">
-      <h2 className="title">About me</h2>
+      <h2 className="title mb-3 sm:mb-5">About me</h2>
       <div className="grid gap-20">
         {passion.map((e, i) => {
           const isEven = i % 2 === 0;
@@ -55,7 +55,7 @@ export const AboutMeSection = () => {
                 </div>
               </HorizontalScroll>
               <HorizontalScroll custom={isEven}>
-                <p className="body1 p-10">{e.text}</p>
+                <p className="body1 p-4 sm:p-5 lg:p-10">{e.text}</p>
               </HorizontalScroll>
             </div>
           );
