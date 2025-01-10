@@ -1,7 +1,6 @@
+import { HorizontalScroll } from "@components";
 import { GiSuperMushroom } from "react-icons/gi";
 import { experience } from "./constants";
-import { motion } from "framer-motion";
-import { horizontalScroll } from "../../utils";
 
 export const ExperienceSection = () => {
   return (
@@ -9,11 +8,7 @@ export const ExperienceSection = () => {
       <h2 className="title text-left">Experience</h2>
       {experience.map((e) => (
         <div key={e.id} className="grid grid-cols-12 gap-2 mb-10">
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.8 }}
-            variants={horizontalScroll}
+          <HorizontalScroll
             custom={true}
             className="col-span-12 sm:col-span-4 lg:col-span-4"
           >
@@ -25,12 +20,8 @@ export const ExperienceSection = () => {
                 <span className="text-secondary">Present</span>
               )}
             </h3>
-          </motion.div>
-          <motion.div
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ amount: 0.8 }}
-            variants={horizontalScroll}
+          </HorizontalScroll>
+          <HorizontalScroll
             custom={false}
             className="col-span-12 sm:col-span-8 lg:col-span-6"
           >
@@ -54,7 +45,7 @@ export const ExperienceSection = () => {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </HorizontalScroll>
         </div>
       ))}
     </section>
