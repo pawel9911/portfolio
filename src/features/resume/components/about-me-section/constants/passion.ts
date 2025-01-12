@@ -20,7 +20,16 @@ export const passion = [
       { src: "assets/me.png", signature: "Sports" },
       { src: "assets/me.png", signature: "Sports" },
     ],
-    text: "Aktywność fizyczna to dla mnie sposób na życie. Siłownia, basen, rower czy długie wędrówki po górach – każdy z tych elementów pozwala mi odnaleźć równowagę i siłę. Uwielbiam przekraczać swoje granice i czerpać radość z ruchu na świeżym powietrzu. Sport to dla mnie nie tylko zdrowie, ale także świetny sposób na regenerację umysłu i odkrywanie piękna otaczającego świata. Każdy wysiłek przynosi mi ogromną satysfakcję i motywuje do dalszego działania.",
+    /* Mój wolny czas spędzam aktywnie, dbając o zdrowie i kondycję.
+       Regularnie chodzę na siłownię, gdzie koncentruję się na
+       budowaniu siły i wytrzymałości. Moim obecnym celem jest
+       osiągnięcie 150 kg w przysiadzie, co stanowi dla mnie duże
+       wyzwanie. Oprócz treningów na siłowni uwielbiam pływać na
+       basenie, jeździć na rowerze i wędrować po górach, ciesząc się
+       pięknem przyrody. Gdy pogoda nie rozpieszcza, w wolnych chwilach
+       gram w CS:GO, co pozwala mi na rywalizację i integrację z
+       przyjaciółmi. */
+    text: "I spend my free time actively, focusing on my health and fitness. I regularly go to the gym, where I focus on building strength and endurance. My current goal is to achieve a 150 kg squat, which is a significant challenge for me. Besides gym workouts, I love swimming, cycling, and hiking in the mountains, enjoying the beauty of nature. When the weather isn't great, I spend my free time playing CS:GO, which allows me to compete with my friends",
   },
   {
     images: [
