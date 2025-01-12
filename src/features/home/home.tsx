@@ -16,11 +16,17 @@ const Home = () => {
                 <span className="text-red-500">Paweł Grzybek</span>
               </h1>
               <p className="max-w-lg mb-8">
-                I am developing my career driven by a passion for technology and
-                a continuous desire to improve my skills. Every project is a new
-                opportunity for me to gain knowledge and face technical
-                challenges. The flexibility and fast pace of the IT industry
-                make my work not only inspiring but also satisfying.
+                {/* Jako programista tworzę wydajne i skalowalne aplikacje, które
+                odpowiadają na rzeczywiste potrzeby użytkowników. W swoich
+                projektach kładę nacisk na czystość kodu, intuicyjność
+                interfejsów i efektywność działania. Programowanie to dla mnie
+                pasja, która pozwala mi nieustannie się rozwijać i realizować
+                ambitne projekty. */}
+                As a programmer, I create efficient and scalable applications
+                that address real user needs. In my projects, I prioritize clean
+                code, intuitive interfaces, and operational efficiency.
+                Programming is my passion, enabling me to continuously grow and
+                take on ambitious projects.
               </p>
               <div>
                 <Socials
