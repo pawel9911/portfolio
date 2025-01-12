@@ -17,7 +17,6 @@ export const projects = [
       "CASL",
       "React Toastify",
       "ESLint",
-      "Prettier",
       "Vite",
     ],
     description:
@@ -25,10 +24,21 @@ export const projects = [
   },
   {
     id: 2,
-    name: "Name",
+    name: "Portfolio",
     category: "Web App",
-    tools: ["tool"],
-    description: "description",
+    tools: [
+      "React",
+      "TypeScript",
+      "React Router",
+      "Framer Motion",
+      "EmailJS",
+      "TailwindCSS",
+      "ESLint",
+      "Vite",
+      "PostCSS",
+    ],
+    description:
+      "Personal portfolio showcasing animations and interactive elements with three main sections: Home, Resume, and Contact. The application is built using React and styled with TailwindCSS, ensuring a modern and responsive design. Navigation is handled with React Router, while animations are powered by Framer Motion for a smooth user experience. The contact form integrates with EmailJS to enable direct messaging. The project emphasizes performance and maintainable code using TypeScript, ESLint, and Prettier. Hosted seamlessly on GitHub Pages using Vite for fast builds.",
   },
   {
     id: 3,
