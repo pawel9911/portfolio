@@ -5,7 +5,14 @@ export const passion = [
       { src: "assets/me.png", signature: "Cooking" },
       { src: "assets/me.png", signature: "Cooking" },
     ],
-    text: "Pasja do gotowania jest moją codzienną inspiracją. Uwielbiam odkrywać nowe smaki, eksperymentować z przyprawami i tworzyć dania, które zachwycają zarówno wyglądem, jak i smakiem. Kuchnia to dla mnie miejsce pełne kreatywności i relaksu. Od aromatycznych zup po finezyjne desery – każdy przepis to osobna historia. Szukam równowagi między tradycyjnymi recepturami a nowoczesnymi technikami kulinarnymi, wierząc, że jedzenie łączy ludzi i tworzy niezapomniane chwile.",
+    /* Gotowanie to moja pasja, która wykracza poza proste
+       przygotowywanie posiłków w domu. Uwielbiam także odkrywać nowe
+       smaki w różnych restauracjach. Jedzenie to dla mnie sposób na
+       poznawanie różnych kultur. Czerpię radość z tworzenia prostych,
+       domowych dań, ale zawsze staram się, by każda potrawa była pełna
+       smaku. Nie jestem mistrzem kuchni, ale każdy posiłek
+       przygotowuję z pasją i starannością. */
+    text: "Cooking is my passion, which goes beyond simply preparing meals at home. I also love discovering new flavors in different restaurants. For me, food is a way of exploring various cultures. I take pleasure in creating simple, home-cooked dishes, but I always strive to make each one full of flavor. I'm not a master chef, but I prepare every meal with passion and care.",
   },
   {
     images: [
