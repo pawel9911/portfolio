@@ -37,6 +37,17 @@ export const passion = [
       { src: "assets/me.png", signature: "Developer" },
       { src: "assets/me.png", signature: "Developer" },
     ],
-    text: "Jako Frontend Developer, tworzę intuicyjne i estetyczne interfejsy, które łączą technologię z wygodą użytkowania. Pasjonuję się budowaniem responsywnych stron internetowych, które nie tylko dobrze wyglądają, ale także działają bez zarzutu. Uwielbiam rozwiązywać problemy i wprowadzać kreatywne rozwiązania, które poprawiają doświadczenia użytkownika. Praca z najnowszymi technologiami daje mi satysfakcję i motywację do ciągłego doskonalenia swoich umiejętności.",
+    /* Jako Frontend Developer z pasją do tworzenia nowoczesnych,
+       intuicyjnych interfejsów, skupiam się na dostarczaniu rozwiązań,
+       które zapewniają doskonałe doświadczenia użytkownikom. Moja
+       praca opiera się na solidnych fundamentach technologicznych, a
+       React pozwala mi realizować projekty, które są szybkie, wydajne
+       i łatwe w dalszym rozwoju. W każdym projekcie stawiam na jakość
+       kodu oraz skalowalność, a także na dbałość o szczegóły, które
+       wpływają na komfort korzystania z aplikacji. Zawsze szukam
+       nowych wyzwań, by rozwijać swoje umiejętności i wdrażać
+       innowacyjne rozwiązania, które odpowiadają na potrzeby
+       użytkowników i rynku. */
+    text: "As a Frontend Developer with a passion for creating modern, intuitive interfaces, I focus on delivering solutions that provide excellent user experiences. My work is built on solid technological foundations, and React allows me to implement projects that are fast, efficient, and easy to scale. In every project, I prioritize code quality and scalability, as well as attention to detail that enhances the user experience. I am always looking for new challenges to develop my skills and implement innovative solutions that meet the needs of users and the market.",
   },
 ];
