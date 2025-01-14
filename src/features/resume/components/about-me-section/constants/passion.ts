@@ -1,7 +1,7 @@
 export const passion = [
   {
     images: [
-      { src: "assets/me.png", signature: "Cooking" },
+      { src: "assets/burger.png", signature: "Last burger" },
       { src: "assets/me.png", signature: "Cooking" },
       { src: "assets/me.png", signature: "Cooking" },
     ],
@@ -16,7 +16,7 @@ export const passion = [
   },
   {
     images: [
-      { src: "assets/me.png", signature: "Sports" },
+      { src: "assets/me-sportsman.png", signature: "Gym" },
       { src: "assets/me.png", signature: "Sports" },
       { src: "assets/me.png", signature: "Sports" },
     ],

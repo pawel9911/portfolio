@@ -22,7 +22,7 @@ export const AboutMeSection = () => {
                 custom={isEven}
                 className="w-full max-w-60 mx-auto shrink-0"
               >
-                <div className="relative w-full h-80">
+                <div className="relative w-full h-88">
                   {e.images.map(({ src, signature }, id) => {
                     const rotate = () => {
                       switch (id) {
@@ -39,14 +39,14 @@ export const AboutMeSection = () => {
                     return (
                       <div
                         key={id}
-                        className={`p-6 pb-16 absolute h-full shadow-item shadow-black bg-white ${rotate()}`}
+                        className={`p-6 pb-14 absolute h-full w-full shadow-item shadow-black bg-white ${rotate()}`}
                       >
                         <img
                           src={src}
                           alt="me"
-                          className="object-contain h-full bg-gray-100"
+                          className="object-contain h-full w-full bg-gray-100"
                         />
-                        <p className="signature absolute bottom-6 right-7">
+                        <p className="signature absolute bottom-5 right-7">
                           {signature}
                         </p>
                       </div>
