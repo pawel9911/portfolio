@@ -33,7 +33,7 @@ export const passion = [
   },
   {
     images: [
-      { src: "assets/me.png", signature: "Developer" },
+      { src: "assets/my-space.png", signature: "My work space" },
       { src: "assets/me.png", signature: "Developer" },
       { src: "assets/me.png", signature: "Developer" },
     ],
