@@ -5,7 +5,6 @@ import {
   EducationSection,
   ExperienceSection,
   ProjectsSection,
-  StackSection,
 } from "./components";
 
 const Resume = () => {
@@ -15,12 +14,6 @@ const Resume = () => {
         <AboutMeSection />
         <EducationSection />
         <CoursesSection />
-
-        <section id="mySkills" className="mt-8 mb-16 hidden">
-          <h2 className="title">My skills</h2>
-        </section>
-
-        <StackSection />
         <ExperienceSection />
         <ProjectsSection />
       </div>
