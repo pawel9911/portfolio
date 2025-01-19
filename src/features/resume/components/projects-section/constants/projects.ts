@@ -63,26 +63,6 @@ export const projects = [
   },
   {
     id: 4,
-    name: "Kalkulator B2B",
-    imgSrc: "assets/calc.png",
-    category: "WordPress Plugin",
-    tools: [
-      "React",
-      "TypeScript",
-      "Material-UI",
-      "RJSF",
-      "AJV",
-      "Math.js",
-      "Axios",
-      "Vite",
-      "ESLint",
-    ],
-    description:
-      "A custom WordPress plugin for generating mathematical calculations based on schemas defined in the WordPress admin panel. The schema is processed on the frontend, where dynamic summaries are generated and can be easily manipulated by administrators. Built with React and styled using Material-UI for a modern and intuitive interface. The plugin utilizes Math.js for handling complex calculations and RJSF (React JSON Schema Form) with AJV for robust form validation. Axios ensures seamless communication with WordPress APIs, while TypeScript and ESLint maintain code quality and type safety. Developed with Vite for fast builds and efficient development workflows.",
-  },
-
-  {
-    id: 4,
     name: "WSP",
     imgSrc: "assets/wsp.png",
     category: "Web App",
