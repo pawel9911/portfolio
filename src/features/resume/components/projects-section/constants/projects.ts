@@ -2,6 +2,7 @@ export const projects = [
   {
     id: 1,
     name: "Instytut Matki i dziecka",
+    imgSrc: "assets/portfolio.png",
     category: "Web App",
     tools: [
       "React",
@@ -25,6 +26,7 @@ export const projects = [
   {
     id: 2,
     name: "Portfolio",
+    imgSrc: "assets/portfolio.png",
     category: "Web App",
     tools: [
       "React",
@@ -43,6 +45,7 @@ export const projects = [
   {
     id: 3,
     name: "Name",
+    imgSrc: "assets/portfolio.png",
     category: "Web App",
     tools: ["tool"],
     description: "description",

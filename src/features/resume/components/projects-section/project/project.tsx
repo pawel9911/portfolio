@@ -30,13 +30,14 @@ interface ProjectProps {
   data: {
     name: string;
     category: string;
+    imgSrc: string;
     tools: string[];
     description: string;
   };
 }
 
 export const Project = ({ data }: ProjectProps) => {
-  const { name, category } = data;
+  const { name, category, imgSrc } = data;
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
@@ -46,7 +47,7 @@ export const Project = ({ data }: ProjectProps) => {
     >
       <div className="overflow-hidden relative h-full">
         <img
-          src="assets/example.jpg"
+          src={imgSrc}
           className="h-72 w-full object-cover"
           alt={`${name} - image`}
         />
