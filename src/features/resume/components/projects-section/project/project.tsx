@@ -30,13 +30,14 @@ interface ProjectProps {
   data: {
     name: string;
     category: string;
+    imgSrc: string;
     tools: string[];
     description: string;
   };
 }
 
 export const Project = ({ data }: ProjectProps) => {
-  const { name, category } = data;
+  const { name, category, imgSrc } = data;
   const [status, toggleStatus] = useCycle(false, true);
 
   return (
@@ -46,8 +47,8 @@ export const Project = ({ data }: ProjectProps) => {
     >
       <div className="overflow-hidden relative h-full">
         <img
-          src="assets/example.jpg"
-          className="h-72 w-full object-cover"
+          src={imgSrc}
+          className="h-72 w-full border-b-2"
           alt={`${name} - image`}
         />
         <div className="grid p-7 pb-10 gap-1">
@@ -57,7 +58,7 @@ export const Project = ({ data }: ProjectProps) => {
         <motion.div
           animate={status ? "open" : "closed"}
           variants={variants}
-          className="p-4 bg-black/85 h-full absolute top-0 left-0 overflow-auto z-50"
+          className="p-4 bg-black/85 w-full h-full absolute top-0 left-0 overflow-auto z-50"
         >
           <ProjectDescription data={data} />
         </motion.div>

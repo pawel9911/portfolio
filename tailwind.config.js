@@ -39,6 +39,9 @@ export default {
       zIndex: {
         60: 60,
       },
+      height: {
+        88: "22rem",
+      },
     },
   },
   plugins: [],
