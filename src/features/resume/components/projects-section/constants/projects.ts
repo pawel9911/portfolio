@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     name: "Instytut Matki i dziecka",
-    imgSrc: "assets/portfolio.png",
+    imgSrc: "assets/imid.png",
     category: "Web App",
     tools: [
       "React",

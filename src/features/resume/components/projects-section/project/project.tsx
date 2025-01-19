@@ -46,11 +46,7 @@ export const Project = ({ data }: ProjectProps) => {
       className="shadow-item shadow-black relative h-full"
     >
       <div className="overflow-hidden relative h-full">
-        <img
-          src={imgSrc}
-          className="h-72 w-full object-cover"
-          alt={`${name} - image`}
-        />
+        <img src={imgSrc} className="h-72 w-full" alt={`${name} - image`} />
         <div className="grid p-7 pb-10 gap-1">
           <span className="text-sm text-secondary">{category}</span>
           <h2 className="text-lg font-bold">{name}</h2>
