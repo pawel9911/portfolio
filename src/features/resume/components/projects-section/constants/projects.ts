@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     name: "Instytut Matki i dziecka",
-    imgSrc: "assets/imid.png",
+    imgSrc: "assets/imid.jpg",
     category: "Web App",
     tools: [
       "React",
@@ -26,7 +26,7 @@ export const projects = [
   {
     id: 2,
     name: "Portfolio",
-    imgSrc: "assets/portfolio.png",
+    imgSrc: "assets/portfolio.jpg",
     category: "Web App",
     tools: [
       "React",
@@ -45,7 +45,7 @@ export const projects = [
   {
     id: 3,
     name: "Kalkulator B2B",
-    imgSrc: "assets/calc.png",
+    imgSrc: "assets/calc.jpg",
     category: "WordPress Plugin",
     tools: [
       "React",
@@ -64,7 +64,7 @@ export const projects = [
   {
     id: 4,
     name: "WSP",
-    imgSrc: "assets/wsp.png",
+    imgSrc: "assets/wsp.jpg",
     category: "Web App",
     tools: [
       "React",

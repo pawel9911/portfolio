@@ -1,9 +1,8 @@
 export const passion = [
   {
     images: [
-      { src: "assets/burger.png", signature: "Last burger" },
-      { src: "assets/me.png", signature: "Cooking" },
-      { src: "assets/me.png", signature: "Cooking" },
+      { src: "assets/burger.jpg", signature: "Last burger" },
+      { src: "assets/burger.jpg", signature: "Cooking" },
     ],
     /* Gotowanie to moja pasja, która wykracza poza proste
        przygotowywanie posiłków w domu. Uwielbiam także odkrywać nowe
@@ -16,9 +15,8 @@ export const passion = [
   },
   {
     images: [
-      { src: "assets/me-sportsman.png", signature: "Gym" },
-      { src: "assets/me.png", signature: "Sports" },
-      { src: "assets/me.png", signature: "Sports" },
+      { src: "assets/me-sportsman.jpg", signature: "Gym" },
+      { src: "assets/me-sportsman.jpg", signature: "Sports" },
     ],
     /* Mój wolny czas spędzam aktywnie, dbając o zdrowie i kondycję.
        Regularnie chodzę na siłownię, gdzie koncentruję się na
@@ -33,9 +31,8 @@ export const passion = [
   },
   {
     images: [
-      { src: "assets/my-space.png", signature: "My work space" },
-      { src: "assets/me.png", signature: "Developer" },
-      { src: "assets/me.png", signature: "Developer" },
+      { src: "assets/my-space.jpg", signature: "My work space" },
+      { src: "assets/my-space.jpg", signature: "Developer" },
     ],
     /* Jako Frontend Developer z pasją do tworzenia nowoczesnych,
        intuicyjnych interfejsów, skupiam się na dostarczaniu rozwiązań,
