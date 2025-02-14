@@ -48,6 +48,7 @@ export const Project = ({ data }: ProjectProps) => {
       <div className="overflow-hidden relative h-full">
         <img
           src={imgSrc}
+          loading="lazy"
           className="h-72 w-full border-b-2"
           alt={`${name} - image`}
         />

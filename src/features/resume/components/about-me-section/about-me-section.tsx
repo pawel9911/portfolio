@@ -43,6 +43,7 @@ export const AboutMeSection = () => {
                       >
                         <img
                           src={src}
+                          loading="lazy"
                           alt="me"
                           className="object-contain h-full w-full bg-gray-100"
                         />

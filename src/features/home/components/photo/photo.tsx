@@ -34,6 +34,7 @@ const Photo = () => {
         <motion.img
           src="assets/me.png"
           alt="me"
+          loading="lazy"
           className="object-contain rounded-full w-full"
           drag
           dragConstraints={constraintsRef}
