@@ -30,9 +30,6 @@ const Header = () => {
           <div className="bg-slate-900/50 px-6 py-2 rounded-full border border-slate-800 shadow-inner">
             <Navigation />
           </div>
-          <button className="bg-red-500 hover:bg-red-600 text-white text-sm font-bold px-5 py-2 rounded-lg transition-all shadow-[0_0_15px_rgba(239,68,68,0.3)]">
-            Hire Me
-          </button>
         </div>
 
         <div className="lg:hidden">
