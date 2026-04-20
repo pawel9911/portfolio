@@ -21,7 +21,7 @@ export const CoursesSection = () => {
                   <h3 className="text-2xl lg:text-4xl font-bold text-white leading-tight mb-2">
                     {e.name}
                   </h3>
-                  <p className="text-red-500 italic font-signature text-xl">
+                  <p className="text-red-500 italic font-signature text-2xl">
                     {e.profile}
                   </p>
                 </div>
