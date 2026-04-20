@@ -1,48 +1,51 @@
-import { motion, MotionProps } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { GiSuperMushroom } from "react-icons/gi";
+import { useLocation } from "react-router-dom";
 
-interface PageTransitionProps extends MotionProps {}
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
 
-const PageTransition = ({ children }: PageTransitionProps) => {
   return (
-    <>
-      {children}
+    <div key={location.pathname}>
       <motion.div
-        animate={{
-          clipPath: [
-            "polygon(0% 0%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%)",
-            "polygon(0% 0%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%)",
-            "polygon(0% 0%, 0 50%, 100% 50%, 100% 50%, 0 50%, 0 100%, 100% 100%, 100% 0%)",
-            "polygon(0% 0%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%)",
-          ],
-        }}
-        transition={{
-          duration: 3,
-          times: [0, 0.2, 0.8, 1],
-        }}
-        className="h-screen w-screen fixed bg-nav z-40 top-0"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        {children}
+      </motion.div>
+
+      <motion.div
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 1 }}
+        transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+        style={{ originY: 0 }}
+        className="fixed top-0 left-0 w-full h-screen bg-slate-950 z-[99] pointer-events-none"
       >
         <motion.div
           initial={{ opacity: 1 }}
-          animate={{ opacity: 0, visibility: "hidden" }}
-          transition={{
-            delay: 0.6,
-            duration: 1.8,
-            ease: "easeInOut",
-          }}
-          className="text-7xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50"
+          animate={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-red-500 text-8xl"
         >
-          <GiSuperMushroom />
+          <div className="relative">
+            <div className="absolute inset-0 bg-red-500/20 blur-3xl rounded-full animate-pulse"></div>
+            <GiSuperMushroom className="relative z-10" />
+          </div>
         </motion.div>
       </motion.div>
+
       <motion.div
-        animate={{ visibility: "hidden" }}
-        transition={{
-          duration: 1.5,
-        }}
-        className="h-screen w-screen fixed bg-primary z-[39] top-0"
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0 }}
+        exit={{ scaleY: 1 }}
+        transition={{ duration: 0.8, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
+        style={{ originY: 0 }}
+        className="fixed top-0 left-0 w-full h-screen bg-red-500/10 backdrop-blur-sm z-[98] pointer-events-none"
       />
-    </>
+    </div>
   );
 };
 

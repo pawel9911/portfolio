@@ -36,7 +36,7 @@ export const PhotoAnimation = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{
-        delay: 4,
+        delay: 1.2,
         duration: 0.8,
         when: "beforeChildren",
       }}

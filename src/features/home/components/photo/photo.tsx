@@ -1,18 +1,15 @@
 import { motion } from "framer-motion";
 import { GiSuperMushroom } from "react-icons/gi";
 import { PhotoAnimation } from "./photo.animation";
-import { useRef } from "react";
 
 const Photo = () => {
-  const constraintsRef = useRef(null);
-
   return (
     <div className="w-full h-full relative mix-blend-lighten">
       <motion.div
         initial={{ opacity: 1, scale: 1 }}
         animate={{ opacity: 0, scale: 1.3, visibility: "hidden" }}
         transition={{
-          delay: 3,
+          delay: 0.8,
           duration: 0.8,
           when: "beforeChildren",
         }}
@@ -24,20 +21,17 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
-          delay: 3,
+          delay: 0.8,
           duration: 0.8,
           when: "beforeChildren",
         }}
         className="size-80 lg:size-112"
-        ref={constraintsRef}
       >
         <motion.img
           src="assets/me.png"
           alt="me"
           loading="lazy"
           className="object-contain rounded-full w-full"
-          drag
-          dragConstraints={constraintsRef}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         />

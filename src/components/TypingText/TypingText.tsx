@@ -8,7 +8,7 @@ interface TypingTextProps {
 
 const TypingText = ({ texts }: TypingTextProps) => {
   const [index, setIndex] = useState(0);
-  const [delay, setDelay] = useState(3);
+  const [delay, setDelay] = useState(0.8);
 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));

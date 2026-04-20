@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
-interface TextareaProps
-  extends React.DetailedHTMLProps<
-    React.TextareaHTMLAttributes<HTMLTextAreaElement>,
-    HTMLTextAreaElement
-  > {
+interface TextareaProps extends React.DetailedHTMLProps<
+  React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+  HTMLTextAreaElement
+> {
   label: string;
 }
 
@@ -13,7 +12,7 @@ const Textarea = ({ label, ...props }: TextareaProps) => {
     <motion.div
       initial={{ y: 50 }}
       animate={{ y: 0 }}
-      transition={{ delay: 3, duration: 2 }}
+      transition={{ delay: 0.8, duration: 2 }}
       className="mb-3"
     >
       <label

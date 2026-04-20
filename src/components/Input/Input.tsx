@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 
-interface InputProps
-  extends DetailedHTMLProps<
-    InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement
-  > {
+interface InputProps extends DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+> {
   label: string;
   from?: "left" | "right";
 }
@@ -16,7 +15,7 @@ const Input = ({ label, from = "left", ...props }: InputProps) => {
       className="mb-3"
       initial={{ x: from === "left" ? -32 : 32 }}
       animate={{ x: 0 }}
-      transition={{ delay: 3, duration: 2 }}
+      transition={{ delay: 0.8, duration: 2 }}
     >
       <label
         htmlFor={props.name}
