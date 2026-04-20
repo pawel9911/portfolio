@@ -10,7 +10,7 @@ export const CoursesSection = () => {
       <div className="grid gap-12">
         {courses.map((e, i) => (
           <div key={i} className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-red-500/5 to-transparent rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute -inset-4 bg-gradient-to-r from-red-500/5 to-primary/15 rounded-[40px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <VerticalScroll className="relative bg-slate-900/30 backdrop-blur-md border border-white/5 p-8 lg:p-12 rounded-[40px] hover:border-red-500/20 ">
               <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
