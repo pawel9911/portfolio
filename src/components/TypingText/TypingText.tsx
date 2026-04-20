@@ -13,7 +13,7 @@ const TypingText = ({ texts }: TypingTextProps) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) =>
-    texts[index].slice(0, latest)
+    texts[index].slice(0, latest),
   );
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const TypingText = ({ texts }: TypingTextProps) => {
   }, [index]);
 
   return (
-    <span className="inline-block h-full text-xl leading-none">
+    <span className="inline-block h-full text-red-500 font-mono text-sm uppercase tracking-widest">
       <motion.span>{displayText}</motion.span>
     </span>
   );
