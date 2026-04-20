@@ -3,11 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply font-primary;
-    @apply bg-primary;
-    @apply text-white;
+  html {
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply font-primary bg-slate-950 text-slate-100 antialiased tracking-tight;
+  }
+
   ::selection {
     @apply bg-secondary text-white;
   }
