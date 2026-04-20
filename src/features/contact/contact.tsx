@@ -26,7 +26,7 @@ const ContactSection = () => {
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -38,7 +38,7 @@ const ContactSection = () => {
         import.meta.env.VITE_APP_EMAIL_JS_SERVICE_ID,
         import.meta.env.VITE_APP_EMAIL_JS_TEMPLATE_ID,
         formData,
-        import.meta.env.VITE_APP_EMAIL_JS_API_KEY
+        import.meta.env.VITE_APP_EMAIL_JS_API_KEY,
       )
       .then(() => {
         setFormData(defaultValues);
@@ -57,31 +57,28 @@ const ContactSection = () => {
 
   return (
     <PageTransition>
-      <div className="container">
-        <div className="mb-8 lg:mb-10">
+      <div className="container mx-auto px-4 py-12 lg:py-20">
+        <div className="mb-12 lg:mb-16 text-center">
           <motion.h1
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{
-              delay: 3,
-              duration: 5,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className="h1 text-center uppercase tracking-widest"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="title uppercase tracking-[0.2em]"
           >
             Contact
           </motion.h1>
-          <p className="h3 text-center">
+          <div className="h4 text-red-500 font-mono mt-2">
             <TypingText texts={["Get in touch"]} />
-          </p>
+          </div>
         </div>
 
-        <div className="flex flex-col items-center gap-y-10 mb-8 lg:mb-0">
+        <div className="flex flex-col items-center gap-y-12">
           <form
             onSubmit={onSubmit}
-            className="relative bg-nav flex flex-col gap-5 w-full border rounded-xl p-10 px-8 sm:px-10 md:p-12 lg:p-14 lg:py-16 xl:py-20 max-w-xl lg:max-w-2xl xl:max-w-3xl"
+            className="relative bg-slate-900/40 backdrop-blur-xl border border-white/10 flex flex-col gap-8 w-full rounded-3xl p-8 md:p-12 lg:p-16 max-w-4xl shadow-2xl"
           >
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-red-500/10 rounded-full blur-[80px] pointer-events-none"></div>
+
             <AnimatePresence>
               {isPending && (
                 <Toast
@@ -91,28 +88,33 @@ const ContactSection = () => {
                 />
               )}
             </AnimatePresence>
+
             <motion.h2
-              initial={{ y: -50 }}
-              animate={{ y: 0 }}
-              transition={{ delay: 3, duration: 0.8 }}
-              className="h2"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="h2 text-white"
             >
-              Let's work together
+              Let's work{" "}
+              <span className="text-red-500 font-signature italic">
+                together
+              </span>
             </motion.h2>
-            <div className="grid lg:grid-cols-2 gap-3">
+
+            <div className="grid md:grid-cols-2 gap-6">
               <Input
-                label="Your first name"
+                label="First Name"
                 name="firstName"
-                placeholder="Enter your first name"
+                placeholder="Jan"
                 type="text"
                 value={formData.firstName}
                 onChange={handleChange}
                 required
               />
               <Input
-                label="Your last name"
+                label="Last Name"
                 name="lastName"
-                placeholder="Enter your last name"
+                placeholder="Kowalski"
                 type="text"
                 value={formData.lastName}
                 onChange={handleChange}
@@ -120,9 +122,9 @@ const ContactSection = () => {
                 from="right"
               />
               <Input
-                label="Your email"
+                label="Email Address"
                 name="email"
-                placeholder="Enter your email"
+                placeholder="jan@kowalski.pl"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -131,7 +133,7 @@ const ContactSection = () => {
               <Input
                 label="Subject"
                 name="subject"
-                placeholder="Enter subject"
+                placeholder="Project Inquiry"
                 type="text"
                 value={formData.subject}
                 onChange={handleChange}
@@ -139,17 +141,30 @@ const ContactSection = () => {
                 from="right"
               />
             </div>
+
             <Textarea
               label="Your Message"
               name="message"
-              placeholder="How can I help you?"
+              placeholder="Tell me about your project..."
               value={formData.message}
               onChange={handleChange}
               required
             />
-            <Button type="submit">Send Message</Button>
+
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mt-4">
+              <Button
+                type="submit"
+                className="w-full sm:w-auto px-12 py-4 bg-red-500 hover:bg-red-600 text-white font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(239,68,68,0.2)] hover:shadow-[0_0_30px_rgba(239,68,68,0.4)] active:scale-95"
+              >
+                Send Message
+              </Button>
+
+              <Socials
+                listStyles="flex gap-4"
+                listElementStyles="p-3 rounded-full bg-white/5 hover:bg-red-500/20 hover:text-red-500 transition-all duration-300 text-2xl"
+              />
+            </div>
           </form>
-          <Socials listElementStyles="text-3xl lg:text-4xl" />
         </div>
       </div>
     </PageTransition>
