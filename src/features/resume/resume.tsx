@@ -12,10 +12,10 @@ const Resume = () => {
     <PageTransition>
       <div className="container text-9xl overflow-hidden">
         <AboutMeSection />
-        <EducationSection />
-        <CoursesSection />
         <ExperienceSection />
         <ProjectsSection />
+        <CoursesSection />
+        <EducationSection />
       </div>
     </PageTransition>
   );
