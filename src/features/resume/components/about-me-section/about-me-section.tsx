@@ -1,64 +1,66 @@
 import { HorizontalScroll } from "@components";
 import { passion } from "./constants";
+import { motion } from "framer-motion";
 
 export const AboutMeSection = () => {
   const passions = passion.map((e, i) => ({ ...e, isEven: i % 2 === 0 }));
 
   return (
     <section id="aboutMe" className="mt-20 mb-40 max-w-6xl mx-auto px-4">
-      <h2 className="title mb-16 uppercase tracking-[0.2em]">About me</h2>
+      <div className="flex items-center gap-6 mb-16">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent to-red-500/30 " />
+        <h2 className="title text-left !mb-0 uppercase tracking-[0.2em]">
+          About me
+        </h2>
+      </div>
 
       <div className="grid gap-32">
-        {passions.map(({ image, isEven, text, name }, i) => {
+        {passions.map(({ image, isEven, text }, i) => {
           return (
-            <HorizontalScroll
-              custom={isEven}
+            <div
               key={i}
-              className={`flex flex-col ${
-                isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-              } items-center gap-12 lg:gap-24 overflow-hidden p-4 sm:p-8 rounded-[40px] bg-slate-900/20 border border-white/5 hover:bg-slate-900/30 transition-colors duration-700`}
+              className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${
+                isEven ? "" : "lg:flex-row-reverse"
+              }`}
             >
-              <div className="w-full lg:w-1/2 relative group">
-                <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/10 shadow-2xl">
-                  <img
-                    src={image.src}
-                    alt={image.signature}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
-                  />
-
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <div className="inline-block px-6 py-3 rounded-2xl bg-slate-950/60 backdrop-blur-xl border border-white/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="text-red-500 font-signature text-xl">
-                        {image.signature}
-                      </p>
-                    </div>
+              <HorizontalScroll
+                custom={isEven}
+                className="w-full max-w-[320px] shrink-0"
+              >
+                <div className="relative w-full h-[400px] group">
+                  <div className="absolute inset-0 p-3 rounded-2xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-2xl shadow-black/50">
+                    <motion.div
+                      whileHover={{ scale: 0.98 }}
+                      className="relative h-full w-full overflow-hidden rounded-xl bg-slate-950"
+                    >
+                      <img
+                        src={image.src}
+                        loading="lazy"
+                        alt="me"
+                        className="object-cover h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+                      />
+                      <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-4">
+                        <p className="signature text-sm text-red-500">
+                          {image.signature}
+                        </p>
+                      </div>
+                    </motion.div>
                   </div>
+                  <div className="absolute -inset-4 bg-red-500/5 blur-3xl rounded-full -z-20"></div>
                 </div>
+              </HorizontalScroll>
 
-                <div className="absolute -inset-10 bg-red-500/5 blur-[100px] rounded-full -z-10 group-hover:bg-red-500/10 transition-colors duration-700" />
-              </div>
-
-              <div className="w-full lg:w-1/2 space-y-8">
-                <div className="flex items-center gap-4">
-                  <span className="text-red-500 font-mono text-sm tracking-[0.3em] uppercase">
-                    {`0${i + 1} / ${name}`}
+              <HorizontalScroll custom={isEven} className="flex-1">
+                <div className="relative">
+                  <span className="absolute -top-8 -left-4 text-8xl text-red-500/10 font-serif">
+                    “
                   </span>
-                  <div className="h-[1px] flex-1 bg-gradient-to-r from-red-500/50 to-transparent" />
+                  <p className="body1 text-lg lg:text-xl leading-relaxed text-slate-400 first-letter:text-4xl first-letter:font-bold first-letter:text-red-500 first-letter:mr-1">
+                    {text}
+                  </p>
                 </div>
-
-                <p className="body1 text-xl lg:text-2xl font-light leading-relaxed text-slate-300">
-                  {text}
-                </p>
-
-                <div
-                  className={`flex ${isEven ? "justify-start" : "lg:justify-end"}`}
-                >
-                  <div className="w-12 h-12 rounded-full border border-red-500/20 flex items-center justify-center group-hover:border-red-500/50 transition-colors">
-                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                  </div>
-                </div>
-              </div>
-            </HorizontalScroll>
+              </HorizontalScroll>
+            </div>
           );
         })}
       </div>
