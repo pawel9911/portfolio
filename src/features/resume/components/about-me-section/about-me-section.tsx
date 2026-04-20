@@ -2,63 +2,63 @@ import { HorizontalScroll } from "@components";
 import { passion } from "./constants";
 
 export const AboutMeSection = () => {
+  const passions = passion.map((e, i) => ({ ...e, isEven: i % 2 === 0 }));
+
   return (
-    <section id="aboutMe" className="mt-8 mb-40 max-w-4xl mx-auto">
-      <h2 className="title mb-3 sm:mb-5">About me</h2>
-      <div className="grid gap-20">
-        {passion.map((e, i) => {
-          const isEven = i % 2 === 0;
+    <section id="aboutMe" className="mt-20 mb-40 max-w-6xl mx-auto px-4">
+      <h2 className="title mb-16 uppercase tracking-[0.2em]">About me</h2>
 
+      <div className="grid gap-32">
+        {passions.map(({ image, isEven, text, name }, i) => {
           return (
-            <div
+            <HorizontalScroll
+              custom={isEven}
               key={i}
-              className={`flex gap-10 ${
-                isEven
-                  ? "flex-col-reverse lg:flex-row"
-                  : "flex-col-reverse lg:flex-row-reverse"
-              }`}
+              className={`flex flex-col ${
+                isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+              } items-center gap-12 lg:gap-24 overflow-hidden p-4 sm:p-8 rounded-[40px] bg-slate-900/20 border border-white/5 hover:bg-slate-900/30 transition-colors duration-700`}
             >
-              <HorizontalScroll
-                custom={isEven}
-                className="w-full max-w-60 mx-auto shrink-0"
-              >
-                <div className="relative w-full h-88">
-                  {e.images.map(({ src, signature }, id) => {
-                    const rotate = () => {
-                      switch (id) {
-                        case 0: {
-                          return isEven ? "-rotate-12" : "rotate-12";
-                        }
+              <div className="w-full lg:w-1/2 relative group">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] border border-white/10 shadow-2xl">
+                  <img
+                    src={image.src}
+                    alt={image.signature}
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  />
 
-                        default: {
-                          return "-z-10";
-                        }
-                      }
-                    };
-
-                    return (
-                      <div
-                        key={id}
-                        className={`p-6 pb-14 absolute h-full w-full shadow-item shadow-black bg-white ${rotate()}`}
-                      >
-                        <img
-                          src={src}
-                          loading="lazy"
-                          alt="me"
-                          className="object-contain h-full w-full bg-gray-100"
-                        />
-                        <p className="signature absolute bottom-5 right-7">
-                          {signature}
-                        </p>
-                      </div>
-                    );
-                  })}
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <div className="inline-block px-6 py-3 rounded-2xl bg-slate-950/60 backdrop-blur-xl border border-white/10 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                      <p className="text-red-500 font-signature text-xl">
+                        {image.signature}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </HorizontalScroll>
-              <HorizontalScroll custom={isEven}>
-                <p className="body1 p-4 sm:p-5 lg:p-10">{e.text}</p>
-              </HorizontalScroll>
-            </div>
+
+                <div className="absolute -inset-10 bg-red-500/5 blur-[100px] rounded-full -z-10 group-hover:bg-red-500/10 transition-colors duration-700" />
+              </div>
+
+              <div className="w-full lg:w-1/2 space-y-8">
+                <div className="flex items-center gap-4">
+                  <span className="text-red-500 font-mono text-sm tracking-[0.3em] uppercase">
+                    {`0${i + 1} / ${name}`}
+                  </span>
+                  <div className="h-[1px] flex-1 bg-gradient-to-r from-red-500/50 to-transparent" />
+                </div>
+
+                <p className="body1 text-xl lg:text-2xl font-light leading-relaxed text-slate-300">
+                  {text}
+                </p>
+
+                <div
+                  className={`flex ${isEven ? "justify-start" : "lg:justify-end"}`}
+                >
+                  <div className="w-12 h-12 rounded-full border border-red-500/20 flex items-center justify-center group-hover:border-red-500/50 transition-colors">
+                    <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+                  </div>
+                </div>
+              </div>
+            </HorizontalScroll>
           );
         })}
       </div>

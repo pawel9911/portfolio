@@ -1,9 +1,7 @@
 export const passion = [
   {
-    images: [
-      { src: "assets/burger.jpg", signature: "Last burger" },
-      { src: "assets/burger.jpg", signature: "Cooking" },
-    ],
+    name: "Food",
+    image: { src: "assets/burger.jpg", signature: "Last burger" },
     /* Gotowanie to moja pasja, która wykracza poza proste
        przygotowywanie posiłków w domu. Uwielbiam także odkrywać nowe
        smaki w różnych restauracjach. Jedzenie to dla mnie sposób na
@@ -14,10 +12,8 @@ export const passion = [
     text: "Cooking is my passion, which goes beyond simply preparing meals at home. I also love discovering new flavors in different restaurants. For me, food is a way of exploring various cultures. I take pleasure in creating simple, home-cooked dishes, but I always strive to make each one full of flavor. I'm not a master chef, but I prepare every meal with passion and care.",
   },
   {
-    images: [
-      { src: "assets/me-sportsman.jpg", signature: "Gym" },
-      { src: "assets/me-sportsman.jpg", signature: "Sports" },
-    ],
+    name: "Sports",
+    image: { src: "assets/me-sportsman.jpg", signature: "Gym" },
     /* Mój wolny czas spędzam aktywnie, dbając o zdrowie i kondycję.
        Regularnie chodzę na siłownię, gdzie koncentruję się na
        budowaniu siły i wytrzymałości. Moim obecnym celem jest
@@ -30,10 +26,8 @@ export const passion = [
     text: "I spend my free time actively, focusing on my health and fitness. I regularly go to the gym, where I focus on building strength and endurance. My current goal is to achieve a 150 kg squat, which is a significant challenge for me. Besides gym workouts, I love swimming, cycling, and hiking in the mountains, enjoying the beauty of nature. When the weather isn't great, I spend my free time playing CS:GO, which allows me to compete with my friends",
   },
   {
-    images: [
-      { src: "assets/my-space.jpg", signature: "My work space" },
-      { src: "assets/my-space.jpg", signature: "Developer" },
-    ],
+    name: "Work",
+    image: { src: "assets/my-space.jpg", signature: "My work space" },
     /* Jako Frontend Developer z pasją do tworzenia nowoczesnych,
        intuicyjnych interfejsów, skupiam się na dostarczaniu rozwiązań,
        które zapewniają doskonałe doświadczenia użytkownikom. Moja
