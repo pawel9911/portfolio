@@ -5,7 +5,9 @@ const Dashboard = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <main className="overflow-hidden">
+        <Outlet />
+      </main>
     </>
   );
 };
