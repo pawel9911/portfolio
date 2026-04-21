@@ -13,7 +13,7 @@ export const ExperienceSection = () => {
       </div>
 
       <div className="flex flex-col gap-16">
-        {experience.map((e, index) => (
+        {experience.map((e) => (
           <div
             key={e.id}
             className="relative grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-12 group"

@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { GiSuperMushroom } from "react-icons/gi";
 import { useLocation } from "react-router-dom";
 
