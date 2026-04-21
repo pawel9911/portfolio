@@ -28,7 +28,7 @@ interface HorizontalScrollProps extends MotionProps {
 export const HorizontalScroll = ({
   children,
   className,
-  viewport = { amount: 0.4 },
+  viewport = { amount: 0.2, once: true },
   ...props
 }: HorizontalScrollProps) => {
   return (
