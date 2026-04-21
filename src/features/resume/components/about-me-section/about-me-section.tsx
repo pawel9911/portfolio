@@ -36,7 +36,7 @@ export const AboutMeSection = () => {
                       <img
                         src={image.src}
                         loading="lazy"
-                        alt="me"
+                        alt={image.signature}
                         className="object-cover h-full w-full opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                       />
                       <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-4">
