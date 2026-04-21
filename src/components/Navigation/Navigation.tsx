@@ -8,19 +8,17 @@ const Navigation = () => {
   return (
     <nav>
       <ul className="flex gap-8">
-        {accessiblePaths.map(({ isVisibleOnNavigation, name, path }) =>
-          isVisibleOnNavigation ? (
-            <li
-              key={path}
-              className={`${
-                location.pathname === path &&
-                "text-red-600 border-b-2 border-red-600"
-              } font-medium hover:text-red-600 transition-all`}
-            >
-              <Link to={path}>{name}</Link>
-            </li>
-          ) : null
-        )}
+        {accessiblePaths.map(({ name, path }) => (
+          <li
+            key={path}
+            className={`${
+              location.pathname === path &&
+              "text-red-600 border-b-2 border-red-600"
+            } font-medium hover:text-red-600 transition-all`}
+          >
+            <Link to={path}>{name}</Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );

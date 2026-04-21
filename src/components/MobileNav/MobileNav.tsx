@@ -82,23 +82,21 @@ const MobileNav = () => {
       >
         <div className="container h-full grid grid-rows-[1fr_auto] gap-7">
           <motion.ul variants={ulVariants} className="flex flex-col gap-7 pt-8">
-            {accessiblePaths.map(({ isVisibleOnNavigation, name, path }) =>
-              isVisibleOnNavigation ? (
-                <motion.li
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  variants={liVariants}
-                  key={path}
-                  className={`${
-                    location.pathname === path && "text-red-600"
-                  } text-center font-bold hover:text-red-600 transition-all bg-primary rounded-3xl mx-auto w-full py-2.5 sm:py-3 sm:text-2xl max-w-sm sm:max-w-lg`}
-                >
-                  <Link className="block" to={path}>
-                    {name}
-                  </Link>
-                </motion.li>
-              ) : null
-            )}
+            {accessiblePaths.map(({ name, path }) => (
+              <motion.li
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                variants={liVariants}
+                key={path}
+                className={`${
+                  location.pathname === path && "text-red-600"
+                } text-center font-bold hover:text-red-600 transition-all bg-primary rounded-3xl mx-auto w-full py-2.5 sm:py-3 sm:text-2xl max-w-sm sm:max-w-lg`}
+              >
+                <Link className="block" to={path}>
+                  {name}
+                </Link>
+              </motion.li>
+            ))}
           </motion.ul>
           <div>
             <Socials />

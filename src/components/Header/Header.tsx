@@ -9,7 +9,7 @@ const Header = () => {
     <header className="sticky top-0 z-10 w-full h-24 lg:h-28 flex items-center bg-slate-950/80 backdrop-blur-md border-b border-white/5">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link
-          to={paths.home}
+          to={paths.dashboard}
           className="group transition-transform duration-300 "
         >
           <div className="flex items-center gap-1">

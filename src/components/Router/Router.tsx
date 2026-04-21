@@ -3,9 +3,10 @@ import { ComponentType, LazyExoticComponent, ReactElement } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 export interface AppRoute {
-  path: string;
+  path?: string;
   Component: LazyExoticComponent<ComponentType> | ComponentType;
   nestedRoutes?: AppRoute[];
+  index?: boolean;
 }
 
 interface AppRouterProps {
@@ -14,11 +15,11 @@ interface AppRouterProps {
   renderRoutes?: (routes: ReactElement) => ReactElement;
 }
 
-export function AppRouter({
+export const AppRouter = ({
   NotFoundRouteComponent,
   routes,
   renderRoutes = (v) => v,
-}: AppRouterProps) {
+}: AppRouterProps) => {
   return (
     <AnimatePresence mode="wait">
       <Router>
@@ -26,16 +27,23 @@ export function AppRouter({
           <Routes>
             {renderRouterRoutes(routes)}
             <Route path="*" element={<NotFoundRouteComponent />} />
-          </Routes>
+          </Routes>,
         )}
       </Router>
     </AnimatePresence>
   );
-}
+};
 
 const renderRouterRoutes = (routes: AppRoute[] = []) =>
-  routes.map(({ nestedRoutes, path, Component }) => (
-    <Route key={path} path={path} element={<Component />}>
-      {renderRouterRoutes(nestedRoutes)}
-    </Route>
-  ));
+  routes.map(({ nestedRoutes, path, Component, index }, i) => {
+    if (index) {
+      const componentKey = Component.name || "index-route";
+      return <Route key={componentKey} index element={<Component />} />;
+    }
+
+    return (
+      <Route key={path || i} path={path} element={<Component />}>
+        {nestedRoutes && renderRouterRoutes(nestedRoutes)}
+      </Route>
+    );
+  });

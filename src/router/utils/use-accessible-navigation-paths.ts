@@ -1,16 +1,19 @@
 import { useMemo } from "react";
 import { type KnownPath, pathLabels, paths } from "../paths";
 
-const pathsNotVisibleOnNavigation: KnownPath[] = [paths.dashboard];
+const pathsNotVisibleOnNavigation = new Set<KnownPath>([]);
 
 export const useAccessibleNavigationPaths = () => {
   return useMemo(() => {
-    const navigationPaths = Object.values(paths) as KnownPath[];
+    const uniquePaths = Array.from(
+      new Set(Object.values(paths)),
+    ) as KnownPath[];
 
-    return navigationPaths.map((path) => ({
-      isVisibleOnNavigation: !pathsNotVisibleOnNavigation.includes(path),
-      name: pathLabels[path],
-      path,
-    }));
+    return uniquePaths
+      .filter((path) => !pathsNotVisibleOnNavigation.has(path))
+      .map((path) => ({
+        name: pathLabels[path],
+        path,
+      }));
   }, []);
 };

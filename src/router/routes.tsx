@@ -7,7 +7,7 @@ import { Home } from "../features/home";
 import { Resume } from "../features/resume";
 
 export const RedirectToHomePage = () => {
-  return <Navigate to={paths.home} />;
+  return <Navigate to={paths.dashboard} />;
 };
 
 export const routes: AppRoute[] = [
@@ -16,7 +16,7 @@ export const routes: AppRoute[] = [
     Component: lazy(() => import("../pages/Dashboard")),
     nestedRoutes: [
       {
-        path: paths.home,
+        index: true,
         Component: Home,
       },
       {
