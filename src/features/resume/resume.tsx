@@ -10,7 +10,7 @@ import {
 const Resume = () => {
   return (
     <PageTransition>
-      <div className="container text-9xl overflow-hidden">
+      <div className="container py-12 lg:py-20 text-9xl overflow-hidden">
         <AboutMeSection />
         <ExperienceSection />
         <ProjectsSection />

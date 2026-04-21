@@ -57,7 +57,7 @@ const ContactSection = () => {
 
   return (
     <PageTransition>
-      <div className="container mx-auto px-4 py-12 lg:py-20">
+      <div className="container py-12 lg:py-20">
         <div className="mb-12 lg:mb-16 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}

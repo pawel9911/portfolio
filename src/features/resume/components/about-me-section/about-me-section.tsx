@@ -6,7 +6,7 @@ export const AboutMeSection = () => {
   const passions = passion.map((e, i) => ({ ...e, isEven: i % 2 === 0 }));
 
   return (
-    <section id="aboutMe" className="mt-20 mb-40 max-w-6xl mx-auto px-4">
+    <section id="aboutMe" className="mb-40 max-w-6xl mx-auto px-4">
       <div className="flex items-center gap-6 mb-16">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent to-red-500/30 " />
         <h2 className="title text-left !mb-0 uppercase tracking-[0.2em]">

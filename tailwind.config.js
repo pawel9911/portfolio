@@ -16,7 +16,7 @@ export default {
         nav: "linear-gradient(0deg, rgba(161,34,39,1) 0%, rgba(115,31,39,1) 25%, rgba(80,28,39,1) 75%, rgba(18,24,40,1) 100%)",
       },
       container: {
-        padding: "15px",
+        padding: "16px",
         center: true,
         screens: {
           sm: "640px",
